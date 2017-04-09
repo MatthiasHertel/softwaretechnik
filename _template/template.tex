@@ -20,19 +20,20 @@
 \usepackage{url, lipsum}
 \usepackage[parfill]{parskip}
 
+
 %-------------------------------------------------------------------------------
 % Commands
 %-------------------------------------------------------------------------------
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
-
+\input{../env}
 %-------------------------------------------------------------------------------
 % HEADER & FOOTER
 %-------------------------------------------------------------------------------
 \pagestyle{fancy}
 \fancyhf{}
 \setlength\headheight{15pt}
-\fancyhead[L]{Vorname Nachname}
-\fancyhead[R]{Beuth Hochschule Berlin}
+\fancyhead[L]{\newCommandName}
+\fancyhead[R]{\newCommandUniversity}
 \fancyfoot[R]{Seite \thepage\ von \pageref{LastPage}}
 
 %-------------------------------------------------------------------------------
@@ -40,25 +41,30 @@
 %-------------------------------------------------------------------------------
 \begin{document}
 
+
 \title{ \normalsize
 		\HRule{0.5pt} \\
-		\LARGE \textbf{\uppercase{Softwaretechnik}} \\
+		\LARGE \textbf{\uppercase{\newCommandDiscipline}} \\
     \smallbreak
-		\small\textbf{{Sommersemester 2017}}\\
+		\small\textbf{{\newCommandTerm}}\\
 		\HRule{2pt} \\ [0.5cm]
 		\normalsize \today \vspace*{10\baselineskip}}
 
 \date{}
 
 \author{
-		Vorname Nachname \\
-    \\
-		Matrikel Nr: 1034511 \\
-		Beuth Hochschule Berlin \\
-		Fachbereich IV Informatik und Medien }
+		\newCommandName \\
+		\newCommandMatriculationNumber \\
+		\newCommandUniversity \\
+		\newCommandFaculty
+}
+
 \pagenumbering{gobble}
+
 \maketitle
+
 \newpage
+
 \pagenumbering{arabic}
 
 
