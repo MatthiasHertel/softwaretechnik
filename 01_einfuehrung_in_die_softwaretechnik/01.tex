@@ -20,6 +20,9 @@
 \usepackage{sectsty}
 \usepackage{url, lipsum}
 \usepackage[parfill]{parskip}
+\usepackage{csquotes}
+\usepackage{hyperref}
+
 
 
 %-------------------------------------------------------------------------------
@@ -41,6 +44,13 @@
 % TITLE PAGE
 %-------------------------------------------------------------------------------
 \begin{document}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 
 \title{ \normalsize
@@ -65,8 +75,10 @@
 \maketitle
 
 \newpage
-
 \pagenumbering{arabic}
+\tableofcontents
+\newpage
+
 
 
 %-------------------------------------------------------------------------------
@@ -98,8 +110,50 @@ Was antworten Sie?
 \bigbreak
 \bigbreak
 \subsubsection*{L"osung:}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\textbf{Der IEEE-Standard 610-1990 definiert SE als:}
+
+
+
+\enquote{(1) The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering to software. (2) The study of approaches as in (1)}
+
+``The application on a systematic, disciplined, quantifiable approach to the development, operation and maintenance of software; that is the application of engineering of software''
+
+\begin{itemize}
+\item http://dictionary.reference.com/browse/systematic: having, showing, or involving a system, method, or plan
+\item http://dictionary.reference.com/browse/disciplined: having or exhibiting discipline; rigorous
+\item http://dictionary.reference.com/browse/quantifiable: to determine, indicate, or express the quantity of.
+\end{itemize}
+
+\bigbreak
+\bigbreak
+
+\textbf{Das SEI selbst definiert SE ebenfalls in zwei Schritten als:}
+
+``Engineering is the systematic application of scientific knowledge in creating and building cost-effective solutions to practical problems in the service of mankind.''
+\\
+``Software engineering is that form of engineering that applies the principles of computer science and mathematics to achieving cost-effective solutions to software problems.''
+\bigbreak
+\bigbreak
+\bigbreak
+\bigbreak
+
+Aus diesen und einigen anderen Definitionen können folgende Merkmale des SE benannt werden:
+\begin{itemize}
+\item SE umfasst Methoden, Techniken und Instrumente zur Erstellung von auf Maschinen lauffähigen Programmen (Software).
+\item Ziel von SE ist die Vermeidung von Fehlern, Reduktion von Aufwänden und Erhöhung des Kundennutzens von Software
+\item SE beinhaltet das Management von Entwicklungsprojekten für Software.
+\item SE umfasst die Inbetriebnahme, den Betrieb und die Wartung von Software.
+\item Hierzu beschreibt SE bewährte Vorgehensweisen in Modellen (Vorgehensmodelle) und definiert Qualitätsstufen für den Software-Entwicklungsprozess (CMM, PMMM).
+\end{itemize}
+
+
+
+
+
+
+
+
 
 %-------------------------------------------------------------------------------
 % #2
