@@ -21,7 +21,12 @@
 \usepackage{url, lipsum}
 \usepackage[parfill]{parskip}
 \usepackage{csquotes}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
+\usepackage[acronym]{glossaries}
+
+
+\makeglossaries
+\glstoctrue
 
 
 
@@ -70,12 +75,14 @@
 		\newCommandFaculty
 }
 
-\pagenumbering{gobble}
+% \pagenumbering{gobble}
 
 \maketitle
+\thispagestyle{empty}
 
 \newpage
-\pagenumbering{arabic}
+
+
 \tableofcontents
 \newpage
 
@@ -95,6 +102,11 @@
 %-------------------------------------------------------------------------------
 % #1
 %-------------------------------------------------------------------------------
+
+\newglossaryentry{st}{type=\acronymtype, name={ST}, description={Softwaretechnik}}
+\newglossaryentry{cmm}{name=CMM, description={Capability Maturity Model}}
+\newglossaryentry{pmmm}{name=PMMM, description={Project Management Maturity Model}}
+
 \subsection{"Ubung SWT-01}
 \subsubsection*{Aufgabe:}
 
@@ -111,40 +123,43 @@ Was antworten Sie?
 \bigbreak
 \subsubsection*{L"osung:}
 
-\textbf{Der IEEE-Standard 610-1990 definiert SE als:}
+\textbf{Der IEEE-Standard 610-1990 definiert Softwaretechnik als:}
 
 
+\begin{center}
+% \enquote{(1) The application of a \textbf{systematic}, \textbf{disciplined}, \textbf{quantifiable} approach to the development, operation, and maintenance of software; that is, the application of engineering to software. (2) The study of approaches as in (1)}
+\enquote{The application of a  systematic\footnote{\label{foot:1}systematic - having, showing, or involving a system, method, or plan}, disciplined\footnote{\label{foot:2}disciplined - having or exhibiting discipline; rigorous}, quantifiable\footnote{\label{foot:3}quantifiable - to determine, indicate, or express the quantity of} approach to the development, operation, and maintenance of software; that is, the application of engineering to software.}
+\end{center}
 
-\enquote{(1) The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering to software. (2) The study of approaches as in (1)}
+% ``The application on a systematic, disciplined, quantifiable approach to the development, operation and maintenance of software; that is the application of engineering of software''
+%
+% \begin{itemize}
+% \item http://dictionary.reference.com/browse/systematic: having, showing, or involving a system, method, or plan
+% \item http://dictionary.reference.com/browse/disciplined: having or exhibiting discipline; rigorous
+% \item http://dictionary.reference.com/browse/quantifiable: to determine, indicate, or express the quantity of.
+% \end{itemize}
+%
+% \bigbreak
+% \bigbreak
+%
+% \textbf{Das SEI selbst definiert SE ebenfalls in zwei Schritten als:}
+%
+% ``Engineering is the systematic application of scientific knowledge in creating and building cost-effective solutions to practical problems in the service of mankind.''
+% \\
+% ``Software engineering is that form of engineering that applies the principles of computer science and mathematics to achieving cost-effective solutions to software problems.''
+% \bigbreak
+% \bigbreak
+\bigbreak
+\bigbreak
 
-``The application on a systematic, disciplined, quantifiable approach to the development, operation and maintenance of software; that is the application of engineering of software''
-
+Aus dieser Definition k"onnen folgende Merkmale der \gls{st} benannt werden:
+\bigbreak
 \begin{itemize}
-\item http://dictionary.reference.com/browse/systematic: having, showing, or involving a system, method, or plan
-\item http://dictionary.reference.com/browse/disciplined: having or exhibiting discipline; rigorous
-\item http://dictionary.reference.com/browse/quantifiable: to determine, indicate, or express the quantity of.
-\end{itemize}
-
-\bigbreak
-\bigbreak
-
-\textbf{Das SEI selbst definiert SE ebenfalls in zwei Schritten als:}
-
-``Engineering is the systematic application of scientific knowledge in creating and building cost-effective solutions to practical problems in the service of mankind.''
-\\
-``Software engineering is that form of engineering that applies the principles of computer science and mathematics to achieving cost-effective solutions to software problems.''
-\bigbreak
-\bigbreak
-\bigbreak
-\bigbreak
-
-Aus diesen und einigen anderen Definitionen können folgende Merkmale des SE benannt werden:
-\begin{itemize}
-\item SE umfasst Methoden, Techniken und Instrumente zur Erstellung von auf Maschinen lauffähigen Programmen (Software).
-\item Ziel von SE ist die Vermeidung von Fehlern, Reduktion von Aufwänden und Erhöhung des Kundennutzens von Software
-\item SE beinhaltet das Management von Entwicklungsprojekten für Software.
-\item SE umfasst die Inbetriebnahme, den Betrieb und die Wartung von Software.
-\item Hierzu beschreibt SE bewährte Vorgehensweisen in Modellen (Vorgehensmodelle) und definiert Qualitätsstufen für den Software-Entwicklungsprozess (CMM, PMMM).
+\item ST umfasst Methoden, Techniken und Instrumente zur Erstellung von auf Maschinen lauff"ahigen Programmen (Software).
+\item Ziel von ST ist die Vermeidung von Fehlern, Reduktion von Aufw"anden und Erh"ohung des Kundennutzens von Software.
+\item ST beinhaltet das Management von Entwicklungsprojekten f"ur Software.
+\item ST umfasst die Inbetriebnahme, den Betrieb und die Wartung von Software.
+\item Hierzu beschreibt SE bew"ahrte Vorgehensweisen in Modellen (Vorgehensmodelle) und definiert Qualit"atsstufen f"ur den Software-Entwicklungsprozess (\gls{cmm}, \gls{pmmm}).
 \end{itemize}
 
 
@@ -284,6 +299,14 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 
 
+%-------------------------------------------------------------------------------
+% Glossar
+%-------------------------------------------------------------------------------
+
+\clearpage
+\printglossary[type=\acronymtype]
+
+\printglossary[type=main]
 %-------------------------------------------------------------------------------
 % ENDE
 %-------------------------------------------------------------------------------
