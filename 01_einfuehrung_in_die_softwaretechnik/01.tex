@@ -1,3 +1,14 @@
+% \begin{filecontents}{\jobname.bib}
+% @book{Dumke2001,
+%     Author = {Dumke},
+%     Publisher = {Vieweg},
+%     Title = {Software-Engineering},
+%     Year = {2001},
+%     ISBN = {3-528-25355-X}}
+% \end{filecontents}
+
+% DUMKE (2001): Software-Engineering, Vieweg, ISBN 3-528-25355-X
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LaTeX Template: Softwaretechnik SS 2017
 %
@@ -23,6 +34,9 @@
 \usepackage{csquotes}
 \usepackage[hidelinks]{hyperref}
 \usepackage[acronym]{glossaries}
+
+\usepackage[style=authoryear,backref=true]{biblatex}
+\addbibresource{\jobname.bib}
 
 
 \makeglossaries
@@ -104,6 +118,7 @@
 %-------------------------------------------------------------------------------
 
 \newglossaryentry{st}{type=\acronymtype, name={ST}, description={Softwaretechnik}}
+\newglossaryentry{ieee}{type=\acronymtype, name={IEEE}, description={Institute of Electrical and Electronics Engineers}}
 \newglossaryentry{cmm}{name=CMM, description={Capability Maturity Model}}
 \newglossaryentry{pmmm}{name=PMMM, description={Project Management Maturity Model}}
 
@@ -123,7 +138,7 @@ Was antworten Sie?
 \bigbreak
 \subsubsection*{L"osung:}
 
-\textbf{Der IEEE-Standard 610-1990 definiert Softwaretechnik als:}
+\textbf{Der \gls{ieee}-Standard 610-1990 definiert Softwaretechnik als:}
 
 
 \begin{center}
@@ -131,24 +146,6 @@ Was antworten Sie?
 \enquote{The application of a  systematic\footnote{\label{foot:1}systematic - having, showing, or involving a system, method, or plan}, disciplined\footnote{\label{foot:2}disciplined - having or exhibiting discipline; rigorous}, quantifiable\footnote{\label{foot:3}quantifiable - to determine, indicate, or express the quantity of} approach to the development, operation, and maintenance of software; that is, the application of engineering to software.}
 \end{center}
 
-% ``The application on a systematic, disciplined, quantifiable approach to the development, operation and maintenance of software; that is the application of engineering of software''
-%
-% \begin{itemize}
-% \item http://dictionary.reference.com/browse/systematic: having, showing, or involving a system, method, or plan
-% \item http://dictionary.reference.com/browse/disciplined: having or exhibiting discipline; rigorous
-% \item http://dictionary.reference.com/browse/quantifiable: to determine, indicate, or express the quantity of.
-% \end{itemize}
-%
-% \bigbreak
-% \bigbreak
-%
-% \textbf{Das SEI selbst definiert SE ebenfalls in zwei Schritten als:}
-%
-% ``Engineering is the systematic application of scientific knowledge in creating and building cost-effective solutions to practical problems in the service of mankind.''
-% \\
-% ``Software engineering is that form of engineering that applies the principles of computer science and mathematics to achieving cost-effective solutions to software problems.''
-% \bigbreak
-% \bigbreak
 \bigbreak
 \bigbreak
 
@@ -159,15 +156,24 @@ Aus dieser Definition k"onnen folgende Merkmale der \gls{st} benannt werden:
 \item Ziel von \gls{st} ist die Vermeidung von Fehlern, Reduktion von Aufw"anden und Erh"ohung des Kundennutzens von Software.
 \item \gls{st} beinhaltet das Management von Entwicklungsprojekten f"ur Software.
 \item \gls{st} umfasst die Inbetriebnahme, den Betrieb und die Wartung von Software.
-\item Hierzu beschreibt SE bew"ahrte Vorgehensweisen in Modellen (Vorgehensmodelle) und definiert Qualit"atsstufen f"ur den Software-Entwicklungsprozess (\gls{cmm}, \gls{pmmm}).
+\item Hierzu beschreibt \gls{st} bew"ahrte Vorgehensweisen in Modellen (Vorgehensmodelle) und definiert Qualit"atsstufen f"ur den Software-Entwicklungsprozess (\gls{cmm}, \gls{pmmm}).
 \end{itemize}
 
+\newpage
 
+\autocite{Dumke2001} nimmt eine Einteilung in f"unf Kategorien vor:
+\bigbreak
+\begin{itemize}
+\item \textbf{Methoden (development methods)}: \smallbreak Richtlinien, Strategien, und Technologien f"ur eine systematische, d. h. phasen- oder schrittweise Entwicklung von Software
 
+\item \textbf{Werkzeuge (tools)}: \smallbreak rechnergest"utzte Hilfsmittel zur Software-Entwicklung und -Anwendung
 
+\item \textbf{Ma"ssysteme (set of measurements)}: \smallbreak Menge von Software-Ma"sen zur Bewertung und Messung der Eigenschaften der zu entwickelnden Software hinsichtlich Eignung, Qualit"at und speziell des Leistungsverhaltens
 
+\item \textbf{Standards (standards)}: \smallbreak Menge von Richtlinien f"ur die einheitliche und abgestimmte Form der Software-Entwicklung und des zu entwickelnden Software-Systems
 
-
+\item \textbf{Erfahrungen (experiences)}: \smallbreak (quantifizierte) Kenntnisse "uber die Entwicklung der Software sowie das Entwicklungsergebnis selbst hinsichtlich des Einsatzes, der Qualit"at und des Nutzens (als Ingenieurwissen)
+\end{itemize}
 
 
 %-------------------------------------------------------------------------------
@@ -188,17 +194,6 @@ Sie werden in einem Bewerbungsgespr"ach gebeten, die wesentlichen Teile des Soft
 \bigbreak
 \bigbreak
 \subsubsection*{L"osung:}
-DUMKE (2001): Software-Engineering, Vieweg, ISBN 3-528-25355-X
-
-Methoden (development methods): Richtlinien, Strategien, und Technologien für eine systematische, d. h. phasen- oder schrittweise Entwicklung von Software
-
-Werkzeuge (tools): rechnergestützte Hilfsmittel zur Software-Entwicklung und -Anwendung
-
-Maßsysteme (set of measurements): Menge von Software-Maßen zur Bewertung und Messung der Eigenschaften der zu entwickelnden Software hinsichtlich Eignung, Qualität und speziell des Leistungsverhaltens
-
-Standards (standards): Menge von Richtlinien für die einheitliche und abgestimmte Form der Software-Entwicklung und des zu entwickelnden Software-Systems
-
-Erfahrungen (experiences): (quantifizierte) Kenntnisse über die Entwicklung der Software sowie das Entwicklungsergebnis selbst hinsichtlich des Einsatzes, der Qualität und des Nutzens (als Ingenieurwissen)
 
 %-------------------------------------------------------------------------------
 % #3
@@ -310,13 +305,15 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 
 %-------------------------------------------------------------------------------
-% Glossar
+% Literatur - Glossar - Akronyme
 %-------------------------------------------------------------------------------
 
 \clearpage
+\printbibliography[heading=bibintoc]
+\newpage
+\printglossary[type=main]
 \printglossary[type=\acronymtype]
 
-\printglossary[type=main]
 %-------------------------------------------------------------------------------
 % ENDE
 %-------------------------------------------------------------------------------
