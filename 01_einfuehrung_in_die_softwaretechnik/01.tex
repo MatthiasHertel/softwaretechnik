@@ -38,6 +38,11 @@
 \usepackage[style=authoryear,backref=true]{biblatex}
 \addbibresource{\jobname.bib}
 
+\usepackage[export]{adjustbox}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{float}
+
 
 \makeglossaries
 \glstoctrue
@@ -98,6 +103,7 @@
 
 
 \tableofcontents
+\listoffigures
 \newpage
 
 
@@ -179,6 +185,7 @@ Aus dieser Definition k"onnen folgende Merkmale der \gls{st} benannt werden:
 %-------------------------------------------------------------------------------
 % #2
 %-------------------------------------------------------------------------------
+\newtheorem{defi}{Definition:}
 \newpage
 \subsection{"Ubung SWT-02}
 \subsubsection*{Aufgabe:}
@@ -194,6 +201,57 @@ Sie werden in einem Bewerbungsgespr"ach gebeten, die wesentlichen Teile des Soft
 \bigbreak
 \bigbreak
 \subsubsection*{L"osung:}
+
+\begin{defi}
+  \textbf{Softwarelebenszyklus}
+  \smallbreak
+  Unter Softwarelebenszyklus versteht man die Menge aller unterscheidbaren Phasen, die das Softwareprodukt und die bei der Erstellung beteiligten Personen durchleben. Dies geht "ublicherweise von der ersten Idee bis hin zu kompletten Installation und sogar bis zur Abl"osung des Softwareproduktes.
+\end{defi}
+\smallbreak
+
+% \begin{multicols}{2}
+% \vfill\null
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{./images/AbbEntwicklgProzess.png}
+%   \captionsetup{name=Abb.,font=footnotesize}
+%   \caption{Phasen im Software-Entwicklungsprozess (abstrakter Zyklus)}
+% \end{figure}
+% \vfill\null
+% \columnbreak
+% \textbf{Entwicklung}
+% \newline
+% Die Software-Entwicklung hat die Aufgabe ein Produkt zu erstellen, das die geforderten Qualit"atseigenschaften besitzt. Der Entwicklungsprozess wird im Allgemeinen in eine Reihe von Aktivit"aten aufgeteilt, deren Ergebnisse einzelne Teilprodukte sind. Solche Aktivit"aten werden nach zeitlichen, begrifflichen, technischen und/oder organisatorischen Kriterien zu Phasen zusammengefasst.
+% \smallbreak
+% \textbf{Management}
+% \newline
+% Das Software-Management ist erforderlich, um den Entwicklungsprozess zu planen, zu organisieren, zu leiten und zu kontrollieren. Entwicklung und Management im Software-Entwicklungsprozess sind vielfach voneinander abh"angig. Die Einf"uhrung neuer Methoden und Tools kann zu Ver"anderungen in den organisatorischen Strukturen f"uhren.
+% \smallbreak
+% \textbf{Qualit"atssicherung}
+% \newline
+% Die Sicherstellung einer geforderten Softwarequalit"at muss durch eine entwicklungsbegleitende Software-Qualit"atssicherung erreicht werden. Dazu sind eine Reihe von konstruktiven und analytischen Ma"ssnahmen durchzuf"uhren. Die Ma"ssnahmen der Qualit"atssicherung werden dabei sowohl von der Entwicklung (die verwendeten Methoden, Tools und Programmiersprachen erfordern bestimmte Sicherungs- und Pr"ufma"ssnahmen), als auch vom Management durch organisatorische Zuordnung der Qualit"atssicherung zum Entwicklungsprozess beeinflusst.
+% % \smallbreak
+% \vfill\null
+% \columnbreak
+%
+% \textbf{Wartung und Pflege}
+% \newline
+% Nachdem ein Softwareprodukt zur Anwendung freigegeben wurde, beginnt die Wartung und Pflege, d. h. es gilt alle nach Inbetriebnahme auftretenden Fehler zu beseitigen, das Anwendungssystem an ver"anderte Bedingungen anzupassen und es bei Vorliegen neuer Anforderungen weiterzuentwickeln. Art und Umfang der Wartungst"atigkeiten sind auch von der Gew"ahrleistung der Qualit"atssicherung abh"angig, d. h. eine schlechte Produktqualit"at f"uhrt zwangsl"aufig zu h"aufigeren Fehleranteilen.
+% \end{multicols}
+
+% \begin{multicols}{2}
+%   \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.5\textwidth]{./images/AbbPhaseneinteilung.png}
+%     \captionsetup{name=Abb.,font=footnotesize}
+%     \caption{Phaseneinteilung nach Balzert}
+%   \end{figure}
+% \end{multicols}
+
+
+
+
+
 
 %-------------------------------------------------------------------------------
 % #3
@@ -313,6 +371,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 \newpage
 \printglossary[type=main]
 \printglossary[type=\acronymtype]
+
 
 %-------------------------------------------------------------------------------
 % ENDE
