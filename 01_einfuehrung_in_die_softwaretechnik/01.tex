@@ -1,11 +1,18 @@
-% \begin{filecontents}{\jobname.bib}
-% @book{Dumke2001,
-%     Author = {Dumke},
-%     Publisher = {Vieweg},
-%     Title = {Software-Engineering},
-%     Year = {2001},
-%     ISBN = {3-528-25355-X}}
-% \end{filecontents}
+\begin{filecontents}{\jobname.bib}
+@book{Dumke2001,
+    Author = {Dumke},
+    Publisher = {Vieweg},
+    Title = {Software-Engineering},
+    Year = {2001},
+    ISBN = {3-528-25355-X}}
+@book{Balzert1998,
+    Author = {BALZERT, H.},
+    Publisher = {Spektrum Akademischer Verlag},
+    Title = {Lehrbuch der Software-Technik, Band 2: Software-Management, Software-Qualit"atssicherung},
+    Year = {2001},
+    ADDRESS = {Heidelberg; Berlin; Oxford},
+    ISBN = {978-3827400659}}
+\end{filecontents}
 
 % DUMKE (2001): Software-Engineering, Vieweg, ISBN 3-528-25355-X
 
@@ -26,7 +33,7 @@
 % \usepackage{movie15}
 \usepackage[T1]{fontenc}
 \usepackage[font=small, labelfont=bf]{caption}
-\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage[protrusion=tr"u, expansion=tr"u]{microtype}
 \usepackage[german]{babel}
 \usepackage{sectsty}
 \usepackage{url, lipsum}
@@ -35,8 +42,16 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage[acronym]{glossaries}
 
-\usepackage[style=authoryear,backref=true]{biblatex}
+% \usepackage[utf8]{inputenc}
+
+% \bibliographystyle{numeric}
+
+% \usepackage[style=authoryear,backref=tr"u]{biblatex}
+\usepackage[sorting=none,backref=tr"u]{biblatex}
 \addbibresource{\jobname.bib}
+% \usepackage[numbers,round]{natbib}
+% \AtEveryCitekey{\clearfield{url}\clearfield{doi}\clearfield{isbn}\clearfield{issn}}
+
 
 \usepackage[export]{adjustbox}
 \usepackage{multicol}
@@ -167,7 +182,7 @@ Aus dieser Definition k"onnen folgende Merkmale der \gls{st} benannt werden:
 
 \newpage
 
-\autocite{Dumke2001} nimmt eine Einteilung in f"unf Kategorien vor:
+Dumke(2001)\supercite{Dumke2001} nimmt eine Einteilung in f"unf Kategorien vor:
 \bigbreak
 \begin{itemize}
 \item \textbf{Methoden (development methods)}: \smallbreak Richtlinien, Strategien, und Technologien f"ur eine systematische, d. h. phasen- oder schrittweise Entwicklung von Software
@@ -201,6 +216,12 @@ Sie werden in einem Bewerbungsgespr"ach gebeten, die wesentlichen Teile des Soft
 \bigbreak
 \bigbreak
 \subsubsection*{L"osung:}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{./images/AbbEntwicklgProzess.png}
+  \captionsetup{name=Abb.,font=footnotesize}
+  \caption{Phasen im Software-Entwicklungsprozess (zyklischer Ansatz)}
+\end{figure}
 
 \begin{defi}
   \textbf{Softwarelebenszyklus}
@@ -208,6 +229,116 @@ Sie werden in einem Bewerbungsgespr"ach gebeten, die wesentlichen Teile des Soft
   Unter Softwarelebenszyklus versteht man die Menge aller unterscheidbaren Phasen, die das Softwareprodukt und die bei der Erstellung beteiligten Personen durchleben. Dies geht "ublicherweise von der ersten Idee bis hin zu kompletten Installation und sogar bis zur Abl"osung des Softwareproduktes.
 \end{defi}
 \smallbreak
+\newpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{./images/Softwarezyklus.png}
+  \captionsetup{name=Abb.,font=footnotesize}
+  \caption{Phasen im Software-Entwicklungsprozess (wasserfallartiger Ansatz)}
+\end{figure}
+
+\underline{\textbf{1. Discovery Phase:}}
+\smallbreak
+Diese Phase beinhaltet laut Balzert(1998)\supercite{Balzert1998} die \textbf{Analyse-} und \textbf{Definitionsphase}.
+In der \textbf{Analysephase} wird die Ausgangssituation beschrieben,
+die Ziele definiert und der daraus resultierende Ressourcenaufwand (\enquote{Scope of Work}) eruiert.\smallbreak
+Diese Phase l"asst sich in folgende Aktivit"aten unterteilen:
+\begin{itemize}
+\item in eine Voruntersuchung (Marktanalyse, Trends, Kundenanfragen - \enquote{Idea Dump}),
+\item eine Erhebung der Ist-Situation,
+\item eine Erstellung einer Uebersicht der Bestandteile (\enquote{Information Architecture}),
+\item eine Durchf"uhrbarkeitsuntersuchung (\enquote{Proof of Concept})
+\end{itemize}
+Diese m"unden in einem Projektplan und einer aus der Wirtschaftlichkeitsbetrachtung ergebenden Projektkalkulation.
+\smallbreak
+In der \textbf{Definitionsphase} werden die Anforderungen an das geplante Softwaresystem aus Anwendersicht und Pr"amissen f"ur die Realisierung des Softwaresystems definiert.\smallbreak
+Diese Phase l"asst sich in folgende Aktivit"aten unterteilen:
+\begin{itemize}
+\item Ermittlung der Anforderungen
+\item Beschreibung und Festlegung der Anforderungen
+\item Validierung der Anforderung auf Konsistenz, Vollst"andigkeit und technische Durchf"uhrbarkeit
+\end{itemize}
+
+Diese Aktivit"aten resultieren in einem Daten- bzw. Funktionsmodell samt Benutzerschnittstelle und Projektplan und der sich darausergebenden Produktdefinition.
+
+\bigbreak
+\underline{\textbf{2. Design Phase:}}
+\smallbreak
+Diese Phase beinhaltet laut Balzert(1998)\supercite{Balzert1998} die \textbf{Entwurfsphase}.
+
+In der \textbf{Entwurfsphase} wird ein softwaretechnischer Entwurf erarbeitet und beinhaltet folgende Aktivit"aten:
+\begin{itemize}
+  \item Analyse der Einsatzbedingungen sowie der Umgebungs- und Randbedingungen
+  \item Definition der Systemkomponenten
+  \item Entwurf der Systemarchitektur (Komponenten, deren Zusammenwirken und Anordnung)
+  \item Entwurf der Schnittstellen und Festlegen ihrer Wechselwirkungen
+  \item Validierung der Systemarchitektur
+\end{itemize}
+Sie m"undet in einer Beschreibung der Struktur des Software-Entwurfs und der Systemkomponenten.
+
+\bigbreak
+\underline{\textbf{3. Development Phase:}}
+\smallbreak
+Diese Phase beinhaltet laut Balzert(1998)\supercite{Balzert1998} die \textbf{Implementierungsphase}.
+
+In der \textbf{Implementierungsphase} wird die Umsetzung der Entwurfsergebnisse in eine ausf"uhrbare Form "uberf"uhrt und eine Sicherung der Richtigkeit und Fehlerfreiheit der Ergebnisse der Systemimplementierung gew"ahrleistet.
+
+Sie beinhaltet folgende Aktivit"aten:
+\begin{itemize}
+  \item Verfeinerung der Algorithmen f"ur die einzelnen Systemkomponenten
+  \item Kodierung / Generierung der Algorithmen
+  \item "Uberf"uhrung des logischen Datenmodells in ein physisches DB-Konzept
+  \item Pr"ufung der semantischen Richtigkeit der Systemkomponenten
+  \item Test der Syntax und gegebenenfalls Korrektur der fehlerhaften Systemkomponenten
+  \item Pr"ufung des Zusammenwirkens der Systemkomponenten unter realen Bedingungen
+  \item Feststellen und Beseitigen der Fehler im Softwaresystem
+\end{itemize}
+Sie m"undet in einer Bereitstellung der Q"ulltexte f"ur die Systemkomponenten, der Protokolle der Komponententests und Systemtests und generierten Datenobjekten und Datenstrukturen.
+\bigbreak
+\underline{\textbf{4. Quality-Assurance Phase:}}
+\smallbreak
+Diese Phase beinhaltet laut Balzert(1998)\supercite{Balzert1998} die \textbf{Abnahme-/ Einf"uhrungsphase}.
+
+In der \textbf{Abnahme-/ Einf"uhrungsphase} Abnahme des fertiggestellten Softwareproduktes und Einf"uhrung beim Anwender realisiert.
+
+Sie beinhaltet folgende Aktivit"aten:
+
+\begin{itemize}
+  \item "Ubergabe des Softwareproduktes einschlie"sslich Dokumentation an den Auftraggeber
+  \item Durchf"uhrung eines Abnahmetests
+  \item Installation des Softwareproduktes in dessen Zielumgebung
+  \item Schulungen der sp"ateren Benutzer der Software
+  \item Inbetriebnahme des Produktes
+\end{itemize}
+
+Sie m"undet im Erfolgsfall in ein gut dokumentiertes "ubergebenes Softwareprodukt.
+\bigbreak
+\underline{\textbf{5. Deployment Phase:}}
+\smallbreak
+
+Diese Phase beinhaltet laut Balzert(1998)\supercite{Balzert1998} die \textbf{Wartungs-} und \textbf{Pflegephase}.
+
+In dieser Phase beinhaltet die Gew"ahrleistung der produktiven Nutzung des Anwendungssystems, Fehlerbeseitigung am Softwaresystem in der Betriebs- bzw. Nutzungsphase und die Realisierung notwendiger "Anderungs- und Erarbeitungsarbeiten.
+
+Sie beinhaltet folgende Aktivit"aten:
+\begin{itemize}
+  \item Wartung: Stabilisierung und Optimierung der Produktinstallation
+  \item Pflege: Anpassungen und Erweiterungen
+\end{itemize}
+
+Sie endet mit der Auslieferung und der Wartung der Software und resultiertert in einer maximalen Kundenzufriedenheit.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./images/AbbPhaseneinteilung.png}
+    \captionsetup{name=Abb.,font=footnotesize}
+    \caption{Phaseneinteilung (wasserfallartig) nach Balzert(1998)\supercite{Balzert1998}}
+  \end{figure}
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{./images/AbbEntwicklgProzess.png}
+%   \captionsetup{name=Abb.,font=footnotesize}
+%   \caption{Phasen im Software-Entwicklungsprozess (abstrakter Zyklus)}
+% \end{figure}
 
 % \begin{multicols}{2}
 % \vfill\null
@@ -225,7 +356,7 @@ Sie werden in einem Bewerbungsgespr"ach gebeten, die wesentlichen Teile des Soft
 % \smallbreak
 % \textbf{Management}
 % \newline
-% Das Software-Management ist erforderlich, um den Entwicklungsprozess zu planen, zu organisieren, zu leiten und zu kontrollieren. Entwicklung und Management im Software-Entwicklungsprozess sind vielfach voneinander abh"angig. Die Einf"uhrung neuer Methoden und Tools kann zu Ver"anderungen in den organisatorischen Strukturen f"uhren.
+% Das Software-Management ist erforderlich, um den Entwicklungsprozess zu planen, zu organisieren, zu leiten und zu kontrollieren. Entwicklung und Management im Software-Entwicklungsprozess sind vielfach voneinander abh"angig. Die Einf"uhrung ne"ur Methoden und Tools kann zu Ver"anderungen in den organisatorischen Strukturen f"uhren.
 % \smallbreak
 % \textbf{Qualit"atssicherung}
 % \newline
@@ -236,7 +367,7 @@ Sie werden in einem Bewerbungsgespr"ach gebeten, die wesentlichen Teile des Soft
 %
 % \textbf{Wartung und Pflege}
 % \newline
-% Nachdem ein Softwareprodukt zur Anwendung freigegeben wurde, beginnt die Wartung und Pflege, d. h. es gilt alle nach Inbetriebnahme auftretenden Fehler zu beseitigen, das Anwendungssystem an ver"anderte Bedingungen anzupassen und es bei Vorliegen neuer Anforderungen weiterzuentwickeln. Art und Umfang der Wartungst"atigkeiten sind auch von der Gew"ahrleistung der Qualit"atssicherung abh"angig, d. h. eine schlechte Produktqualit"at f"uhrt zwangsl"aufig zu h"aufigeren Fehleranteilen.
+% Nachdem ein Softwareprodukt zur Anwendung freigegeben wurde, beginnt die Wartung und Pflege, d. h. es gilt alle nach Inbetriebnahme auftretenden Fehler zu beseitigen, das Anwendungssystem an ver"anderte Bedingungen anzupassen und es bei Vorliegen ne"ur Anforderungen weiterz"untwickeln. Art und Umfang der Wartungst"atigkeiten sind auch von der Gew"ahrleistung der Qualit"atssicherung abh"angig, d. h. eine schlechte Produktqualit"at f"uhrt zwangsl"aufig zu h"aufigeren Fehleranteilen.
 % \end{multicols}
 
 % \begin{multicols}{2}
@@ -270,7 +401,7 @@ Geben Sie bitte zu jedem Prinzip der Softwaretechnik (Abstraktion, Strukturierun
 \bigbreak
 \bigbreak
 \subsubsection*{L"osung:}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occ"acat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 %-------------------------------------------------------------------------------
 % #4
@@ -289,7 +420,7 @@ Recherchieren Sie bitte im Internet "uber Softwaretechnik oder Softwareengineeri
 \bigbreak
 \bigbreak
 \subsubsection*{L"osung:}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occ"acat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 %-------------------------------------------------------------------------------
 % #5
@@ -314,7 +445,7 @@ Versuchen Sie die Fragen schriftlich zu beantworten ohne noch einmal in der Lern
 \bigbreak
 \bigbreak
 \subsubsection*{L"osung:}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occ"acat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 %-------------------------------------------------------------------------------
 % #6
@@ -324,16 +455,16 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 \subsubsection*{Aufgabe:}
 
 \begin{framed}
-\textbf{Fehlerquellen}
+\textbf{Fehlerq"ullen}
 \smallbreak
-H"aufige Fehlerquellen in Softwareprojekten sind:
+H"aufige Fehlerq"ullen in Softwareprojekten sind:
 \bigbreak
 \includegraphics[width=1.0\textwidth]{./images/ueb01-06.png}
 \end{framed}
 \bigbreak
 \bigbreak
 \subsubsection*{L"osung:}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occ"acat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 %-------------------------------------------------------------------------------
 % #7
@@ -352,7 +483,7 @@ Ordnen Sie die Phasen und Ergebnisse des Softwarelebenszyklus in der richtigen R
 \bigbreak
 \bigbreak
 \subsubsection*{L"osung:}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occ"acat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
 
@@ -367,6 +498,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 %-------------------------------------------------------------------------------
 
 \clearpage
+\setlength\bibitemsep{10pt}
 \printbibliography[heading=bibintoc]
 \newpage
 \printglossary[type=main]
