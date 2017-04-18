@@ -384,40 +384,40 @@ Geben Sie bitte zu jedem Prinzip der Softwaretechnik (Abstraktion, Strukturierun
 \smallbreak
 Angenommen es gibt in einer Applikation verschiedene Sichtweise auf eine Applikation.
 \smallbreak
-Zum Beispiel eine normale User-Sicht welche in ihren Rechten beschraenkt ist und es dadurch eingeschraenkte Nutzungsmoeglichkeiten gibt.
+Zum Beispiel eine normale User-Sicht welche in ihren Rechten beschr"ankt ist und es dadurch eingeschr"ankte Nutzungsm"oglichkeiten gibt.
 Gerade bei der Entwicklung einer ACL bzw einer Rollenbasierten Authentifizierung innerhalb einer Applikation benutzt man Abstraktion um nicht alle Rechte/Rollen und deren Konsequenzen bis ins Detail zu konkretisieren, sondern ein abstraktes Modell der Rechte zu entwickeln.
 Man spricht dabei zum Beispiel von einem User-Kontext und einen Administrativen-Kontext.
 
-In Bezugnahme zu sogenannten CRUD Anwendungen sind in dem User Kontext nur lesende Zugriffe auf das Inhaltsmodell moeglich , wohingegen in dem Administrativen Kontext ein Vollzugriff moeglich ist.
+In Bezugnahme zu sogenannten CRUD Anwendungen sind in dem User Kontext nur lesende Zugriffe auf das Inhaltsmodell m"oglich , wohingegen in dem Administrativen Kontext ein Vollzugriff m"oglich ist.
 
-Der Komplexitaetsgrad steigt mit dem Funktionsumfang, wenn man zum Beispiel dem User erlaubt eigene Crud Inhalte in vollem Umfang zu verwalten - so muss man das Inhaltsmodell an das Usermodell binden.
-Um die Komplexitaet in diesem Fall einzugrenzen bedient man sich zum Beispiel der klassenbildenden Abstraktion. Man abstrahiert den Sachverhalt auf gemeinsame Merkmale (im obigen Beispiel das R - Read) und bildet spezielle Merkmale (C - Create , U - Update und D - Delete).
+Der Komplexit"atsgrad steigt mit dem Funktionsumfang, wenn man zum Beispiel dem User erlaubt eigene Crud Inhalte in vollem Umfang zu verwalten - so muss man das Inhaltsmodell an das Usermodell binden.
+Um die Komplexit"at in diesem Fall einzugrenzen bedient man sich zum Beispiel der klassenbildenden Abstraktion. Man abstrahiert den Sachverhalt auf gemeinsame Merkmale (im obigen Beispiel das R - Read) und bildet spezielle Merkmale (C - Create , U - Update und D - Delete).
 
 Im obigen Beispiel wird die Inhaltsmenge die man aus dem User-Kontext konsumieren kann als Teilmenge der aus dem Administrativen-Kontext gegebenen Inhaltsmenge angesehen.
-Man konkretisiert diese Inhaltsmenge nicht sondern abstrahiert nur deren Authentifizierung darauf. Durch Abstraktion ist es moeglich das komplexe Problem Authentifizierung auf verschiedene Ebenen zu verteilen. Diese Trennung wird durch das Erfassen des Wesentlichen und das Weglassen von Besonderem realisiert.
+Man konkretisiert diese Inhaltsmenge nicht sondern abstrahiert nur deren Authentifizierung darauf. Durch Abstraktion ist es m"oglich das komplexe Problem Authentifizierung auf verschiedene Ebenen zu verteilen. Diese Trennung wird durch das Erfassen des Wesentlichen und das Weglassen von Besonderem realisiert.
 
 
 
 \textbf{Strukturierung}
 - Beispiel: Architektur einer Webapplikation (MVC Pattern)
 
-Das Prinzip der Strukturierung kann man am Beispiel des Architektur Patterns MVC sehr gut erklaeren.
+Das Prinzip der Strukturierung kann man am Beispiel des Architektur Patterns MVC sehr gut erkl"aren.
 Es strukturiert eine Applikation durch die Trennung des Inhalt (Business Logik - Controller) vom Design (das Frontend - Design).
-Es hat den Vorteil das das Frontend unabhaengig (parallel) vom Entwicklungsstand der Applikation entwickelt werden kann - das Prinzip hat eine grosse Bedeutung fuer den Entwicklungsprozess einer Applikation.
+Es hat den Vorteil das das Frontend unabh"angig (parallel) vom Entwicklungsstand der Applikation entwickelt werden kann - das Prinzip hat eine grosse Bedeutung f"ur den Entwicklungsprozess einer Applikation.
 
-Mithilfe von Development-Seeds bzw. Dummy Data ist es dem Frontend Entwickler moeglich abgetrennt von der Business Logik zu entwickeln - es stellt somit eine elementare Basis fuer die Arbeitsteilung dar.
+Mithilfe von Development-Seeds bzw. Dummy Data ist es dem Frontend Entwickler m"oglich abgetrennt von der Business Logik zu entwickeln - es stellt somit eine elementare Basis f"ur die Arbeitsteilung dar.
 
-Darueberhinaus hilft es bei der Bewaeltigung der Komplexitaet und fuehrt zu einer erhoehten Verstaendlichkeit fuer Produkt und Prozess.
+Dar"uberhinaus hilft es bei der Bew"altigung der Komplexit"at und f"uhrt zu einer erh"ohten Verst"andlichkeit f"ur Produkt und Prozess.
 
-Durch Abtrennung dieser Domaenen erhoeht es zu dem die Wartbarkeit und die Einarbeitung in ein fremdes Softwareprodukt (reverse engineering).
+Durch Abtrennung dieser Dom"anen erh"oht es zu dem die Wartbarkeit und die Einarbeitung in ein fremdes Softwareprodukt (reverse engineering).
 
-Als Beispiel koennte man den klassisches Entwicklungsprozess einer Webapplikation anfuehren. Es wird unabhaengig vom Controller die View entwickelt.
-Die View (Frontend) kann auch erstmal mit hardcodierten Inhalten entwickelt werden und spaeter mittels Templating mit produktiven Daten gefuellt werden.
+Als Beispiel k"onnte man den klassisches Entwicklungsprozess einer Webapplikation anf"uhren. Es wird unabh"angig vom Controller die View entwickelt.
+Die View (Frontend) kann auch erstmal mit hardcodierten Inhalten entwickelt werden und sp"ater mittels Templating mit produktiven Daten gef"ullt werden.
 
-Oft kommen die produktiven Daten aus diversen Subsystemen (Backend) die fuer einzelne Entwickler nicht allumfassend ueberschaubar sind.
-Das Frontend muss sich also bei guter Gesamtstrukturierung nicht um die Richtigkeit/Validitaet der Daten kuemmern und kann sich voll und ganz auf die View's konzentrieren , ist also nicht verantwortlich fuer die Datengenerierung sondern nur fuer die Darstellung.
+Oft kommen die produktiven Daten aus diversen Subsystemen (Backend) die f"ur einzelne Entwickler nicht allumfassend "uberschaubar sind.
+Das Frontend muss sich also bei guter Gesamtstrukturierung nicht um die Richtigkeit/Validit"at der Daten k"ummern und kann sich voll und ganz auf die View's konzentrieren , ist also nicht verantwortlich f"ur die Datengenerierung sondern nur f"ur die Darstellung.
 
-Ein weiteres Beispiel fuer Strukturierung ist das Prinzip der Partials in einem Applikationsfrontend. Durch Partials ist es moeglich ein Problem nur einmal zu definieren/auszuprogrammieren und entspricht dem DRY Best-Practise der Softwaretechnik.
+Ein weiteres Beispiel f"ur Strukturierung ist das Prinzip der Partials in einem Applikationsfrontend. Durch Partials ist es m"oglich ein Problem nur einmal zu definieren/auszuprogrammieren und entspricht dem DRY Best-Practise der Softwaretechnik.
 
 \textbf{Hierarchisierung}
 
@@ -426,47 +426,47 @@ Das Prinzip der Hierarchisierung ist ein Spezialfall der Strukturisierung und be
 Als Beispiel kann man das Prinzip der Partials noch einmal aufgreifen. Dort wird eine Struktur der Applikation ausgehend von einem Main/Layout Partial hierrarchisch realisiert.
 Die Applikation wird in Sektionen strukturiert. Es werden also bestimmte Sektionen in den Code injeziert (yielding).
 
-Es ist also moeglich eine Applikation in Hauptseiten und Unterseiten bzgl. der Hierarchie zu strukturieren.
+Es ist also m"oglich eine Applikation in Hauptseiten und Unterseiten bzgl. der Hierarchie zu strukturieren.
 Das Prinzip der Hierarchie liegt eine Baumstruktur - in diesem Fall als Wurzel das Mainpartial - zu grunde.
 
-
+\newpage
 \textbf{Modularisierung}
 
-In jedem Oekosystem einer Programmiersprache hat man Moeglichkeiten auf Module zurueckzugreifen und bestimmte Probleme nicht noch einmal loesen zu muessen. (Ueber dieverse Packagemanager (npm, gems, composer, maven/ant, pip etc.))
+In jedem Oekosystem einer Programmiersprache hat man M"oglichkeiten auf Module zur"uckzugreifen und bestimmte Probleme nicht noch einmal l"osen zu m"ussen. (Ueber dieverse Packagemanager (npm, gems, composer, maven/ant, pip etc.))
 
-Ein Modul bietet die Moeglichkeit der Aufgliederung eines Softwaresystems in diverse Subsysteme. Das hat den Vorteil das die Komplexitaet durch das Prinzip ``divide and conquer'' gebaendigt wird.
-Diese Module bieten diverse Schnittstellen fuer den In/Output und sind in sich abgeschlossen und wiederverwendbar.
+Ein Modul bietet die M"oglichkeit der Aufgliederung eines Softwaresystems in diverse Subsysteme. Das hat den Vorteil das die Komplexit"at durch das Prinzip ``divide and conquer'' geb"andigt wird.
+Diese Module bieten diverse Schnittstellen f"ur den In/Output und sind in sich abgeschlossen und wiederverwendbar.
 
-Darueberhinaus sind Module in sich wartbar (vom Maintainer) und abgekapselt vom Hauptsystem.
+Dar"uberhinaus sind Module in sich wartbar (vom Maintainer) und abgekapselt vom Hauptsystem.
 
 Ich hatte zum Beispiel in Java das Problem der Serialization/Deserialization von JSON.
-Natuerlich haette ich auch das Rad neu erfinden koennen und es mit den Werkzeugen der Programmiersprache selbst loesen koennen.
-Viel einfacher ging das aber ueber ein Modul von Google GSON was eine Abstraktionsebene dazwischen geschalten hat und letztlich schneller zum Erfolg fuehrte.
+Nat"urlich h"atte ich auch das Rad neu erfinden k"onnen und es mit den Werkzeugen der Programmiersprache selbst l"osen k"onnen.
+Viel einfacher ging das aber "uber ein Modul von Google GSON was eine Abstraktionsebene dazwischen geschalten hat und letztlich schneller zum Erfolg f"uhrte.
 
-Oder die Authentifizierung gegenueber eines LDAP dort habe ich auf ein composer package ADLAP2 zurueckgegriffen was genau das tut was ich moechte. Ich musste nicht verstehen wie es die Authentifizierung gegenueber einen LDAP genau macht - ich musste nur verstehen es anzuwenden.
+Oder die Authentifizierung gegen"uber eines LDAP dort habe ich auf ein composer package ADLAP2 zur"uckgegriffen was genau das tut was ich m"ochte. Ich musste nicht verstehen wie es die Authentifizierung gegen"uber einen LDAP genau macht - ich musste nur verstehen es anzuwenden.
 
-Als Anlaufstelle fuer diverse Packages Module in diversen Sprachen nutze ich immer wieder Github - weil dort 99\% aller meiner Probleme schon geloest sind und ich mich der eigentlich Problematik meines Systems widmen kann.
+Als Anlaufstelle f"ur diverse Packages Module in diversen Sprachen nutze ich immer wieder Github - weil dort 99\% aller meiner Probleme schon gel"ost sind und ich mich der eigentlich Problematik meines Systems widmen kann.
 
 Es geht mittlerweile soweit das ich an diversen stelle schon Contribute weil ich Nutzungsszenarien entdecke die so vom Modul noch nicht bedacht sind.
 
-Problematisch sehe ich jedoch das ich durch die Nutzung von Fremdmodulen mich in eine Abhaengigkeit des Packages/Modules begebe. Oft werden diverse Packages umgebaut (die schnittstellen veraendert) das ein Upgrade so nicht einfach moeglich ist.
-Darueberhinaus sehe ich es als problematisch an gerade bei sensiblen funktionen (authentifizierung einer applikation) nicht nur auf die funktionalitaet eines moduls zu vertrauen sondern viel mehr auf die kompetenz des entwickelnden.
-dem gegenueber steht die opensource bewegung wo jeder auf den Code schauen kann und issues schreiben kann und contributen kann.
+Problematisch sehe ich jedoch das ich durch die Nutzung von Fremdmodulen mich in eine Abh"angigkeit des Packages/Modules begebe. Oft werden diverse Packages umgebaut (die schnittstellen ver"andert) das ein Upgrade so nicht einfach m"oglich ist.
+Dar"uberhinaus sehe ich es als problematisch an gerade bei sensiblen funktionen (authentifizierung einer applikation) nicht nur auf die funktionalit"at eines moduls zu vertrauen sondern viel mehr auf die kompetenz des entwickelnden.
+dem gegen"uber steht die opensource bewegung wo jeder auf den Code scha"un kann und issues schreiben kann und contributen kann.
 
 
 
 
 \textbf{Standardisierung}
 
-Das Prinzip der Standardisierung beinhaltet die Vereinheitlichung des Entwicklungsprozesses und des Produktes. Der wichtigste Aspekt ist die Kostenminifizierung. Der Aufwand wird gemindert durch das Einfuehren von Standards.
+Das Prinzip der Standardisierung beinhaltet die Vereinheitlichung des Entwicklungsprozesses und des Produktes. Der wichtigste Aspekt ist die Kostenminifizierung. Der Aufwand wird gemindert durch das Einf"uhren von Standards.
 Es entwickelte sich dazu das Paradigma ``Convention over Configuration'', was die Konvention vor die Konfiguration stellt und so den Konfigurationsaufwand mindert. (siehe Ruby on Rails)
 
-Ich erlebe in meiner berfulichen Welt staendig Standards mit denen ich konfrontiert werde.
+Ich erlebe in meiner berfulichen Welt st"andig Standards mit denen ich konfrontiert werde.
 Angefangen bei ganz banalen Sachen wie die Camel-Case Notation in der Namensgebung von Variablen/Methoden/Klassen.
 Aber auch die Namensgebung bestimmter Branches (Feature Branches) inklusive Issue Nummer.
 
-Ich denke das Standards die Qualitaet der Zuarbeit immens erhoehen koennen.
-Das faengt beim einrichten der Entwicklungsumgebung an so das wir bei XP (Pairprogramming) eine Dev-Environment haben wo wir uns schnell einarbeiten und produktiv werden, ueber die Namensgebung bis hin zu den Zusammenfassen von Commits bei einem MergeRequest im GIT.
+Ich denke das Standards die Qualit"at der Zuarbeit immens erh"ohen k"onnen.
+Das f"angt beim einrichten der Entwicklungsumgebung an so das wir bei XP (Pairprogramming) eine Dev-Environment haben wo wir uns schnell einarbeiten und produktiv werden, "uber die Namensgebung bis hin zu den Zusammenfassen von Commits bei einem MergeRequest im GIT.
 
 Alles unter dem Aspekt ein Enhancement zu haben bzgl. des kollaborativen Arbeitens.
 
