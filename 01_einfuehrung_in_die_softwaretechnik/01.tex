@@ -1,18 +1,18 @@
-\begin{filecontents}{\jobname.bib}
-@book{Dumke2001,
-    Author = {Dumke},
-    Publisher = {Vieweg},
-    Title = {Software-Engineering},
-    Year = {2001},
-    ISBN = {3-528-25355-X}}
-@book{Balzert1998,
-    Author = {BALZERT, H.},
-    Publisher = {Spektrum Akademischer Verlag},
-    Title = {Lehrbuch der Software-Technik, Band 2: Software-Management, Software-Qualit"atssicherung},
-    Year = {2001},
-    ADDRESS = {Heidelberg; Berlin; Oxford},
-    ISBN = {978-3827400659}}
-\end{filecontents}
+% \begin{filecontents}{\jobname.bib}
+% @book{Dumke2001,
+%     Author = {Dumke},
+%     Publisher = {Vieweg},
+%     Title = {Software-Engineering},
+%     Year = {2001},
+%     ISBN = {3-528-25355-X}}
+% @book{Balzert1998,
+%     Author = {BALZERT, H.},
+%     Publisher = {Spektrum Akademischer Verlag},
+%     Title = {Lehrbuch der Software-Technik, Band 2: Software-Management, Software-Qualit"atssicherung},
+%     Year = {2001},
+%     ADDRESS = {Heidelberg; Berlin; Oxford},
+%     ISBN = {978-3827400659}}
+% \end{filecontents}
 
 % DUMKE (2001): Software-Engineering, Vieweg, ISBN 3-528-25355-X
 
@@ -33,8 +33,9 @@
 % \usepackage{movie15}
 \usepackage[T1]{fontenc}
 \usepackage[font=small, labelfont=bf]{caption}
-\usepackage[protrusion=tr"u, expansion=tr"u]{microtype}
-\usepackage[german]{babel}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage[ngerman]{babel}
+\usepackage[ngerman]{translator}
 \usepackage{sectsty}
 \usepackage{url, lipsum}
 \usepackage[parfill]{parskip}
@@ -47,7 +48,7 @@
 % \bibliographystyle{numeric}
 
 % \usepackage[style=authoryear,backref=tr"u]{biblatex}
-\usepackage[sorting=none,backref=tr"u]{biblatex}
+\usepackage[sorting=none,backref=true, backend=biber]{biblatex}
 \addbibresource{\jobname.bib}
 % \usepackage[numbers,round]{natbib}
 % \AtEveryCitekey{\clearfield{url}\clearfield{doi}\clearfield{isbn}\clearfield{issn}}
@@ -84,7 +85,7 @@
 %-------------------------------------------------------------------------------
 \begin{document}
 \hypersetup{
-    colorlinks,
+    % colorlinks,
     citecolor=black,
     filecolor=black,
     linkcolor=black,
