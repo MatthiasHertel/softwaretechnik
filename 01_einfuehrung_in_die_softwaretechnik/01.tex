@@ -217,19 +217,45 @@ Sie werden in einem Bewerbungsgespr"ach gebeten, die wesentlichen Teile des Soft
 \bigbreak
 \bigbreak
 \subsubsection*{L"osung:}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{./images/AbbEntwicklgProzess.png}
-  \captionsetup{name=Abb.,font=footnotesize}
-  \caption{Phasen im Software-Entwicklungsprozess (zyklischer Ansatz)}
-\end{figure}
 
+%-------------------------------------------------------------------------------
+% wesentliche Teile des Softwarelebenszyklus
+%-------------------------------------------------------------------------------
 \begin{defi}
   \textbf{Softwarelebenszyklus}
   \smallbreak
   Unter Softwarelebenszyklus versteht man die Menge aller unterscheidbaren Phasen, die das Softwareprodukt und die bei der Erstellung beteiligten Personen durchleben. Dies geht "ublicherweise von der ersten Idee bis hin zu kompletten Installation und sogar bis zur Abl"osung des Softwareproduktes.
 \end{defi}
 \smallbreak
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{./images/AbbEntwicklgProzess.png}
+  \captionsetup{name=Abb.,font=footnotesize}
+  \caption{Phasen im Software-Entwicklungsprozess (zyklischer Ansatz)}
+\end{figure}
+\newpage
+
+
+\textbf{Entwicklung}
+\newline
+Die Software-Entwicklung hat die Aufgabe ein Produkt zu erstellen, das die geforderten Qualit"atseigenschaften besitzt. Der Entwicklungsprozess wird im Allgemeinen in eine Reihe von Aktivit"aten aufgeteilt, deren Ergebnisse einzelne Teilprodukte sind. Solche Aktivit"aten werden nach zeitlichen, begrifflichen, technischen und/oder organisatorischen Kriterien zu Phasen zusammengefasst.
+\smallbreak
+\textbf{Management}
+\newline
+Das Software-Management ist erforderlich, um den Entwicklungsprozess zu \textbf{planen}, zu \textbf{organisieren}, zu \textbf{leiten} und zu \textbf{kontrollieren}. Entwicklung und Management im Software-Entwicklungsprozess sind vielfach voneinander abh"angig. Die Einf"uhrung ne"ur Methoden und Tools kann zu Ver"anderungen in den organisatorischen Strukturen f"uhren.
+\smallbreak
+\textbf{Qualit"atssicherung}
+\newline
+Die Sicherstellung einer geforderten Softwarequalit"at muss durch eine entwicklungsbegleitende Software-Qualit"atssicherung erreicht werden. Dazu sind eine Reihe von konstruktiven und analytischen Ma"ssnahmen durchzuf"uhren. Die Ma"ssnahmen der Qualit"atssicherung werden dabei sowohl von der Entwicklung (die verwendeten Methoden, Tools und Programmiersprachen erfordern bestimmte Sicherungs- und Pr"ufma"ssnahmen), als auch vom Management durch organisatorische Zuordnung der Qualit"atssicherung zum Entwicklungsprozess beeinflusst.
+\smallbreak
+\textbf{Wartung und Pflege}
+\newline
+Nachdem ein Softwareprodukt zur Anwendung freigegeben wurde, beginnt die Wartung und Pflege, d. h. es gilt alle nach Inbetriebnahme auftretenden Fehler zu beseitigen, das Anwendungssystem an ver"anderte Bedingungen anzupassen und es bei Vorliegen ne"ur Anforderungen weiterz"untwickeln. Art und Umfang der Wartungst"atigkeiten sind auch von der Gew"ahrleistung der Qualit"atssicherung abh"angig, d. h. eine schlechte Produktqualit"at f"uhrt zwangsl"aufig zu h"aufigeren Fehleranteilen.
+
+%-------------------------------------------------------------------------------
+% Phasen der Entwicklung (wasserfallartig)
+%-------------------------------------------------------------------------------
 \newpage
 \begin{figure}[H]
   \centering
@@ -328,61 +354,12 @@ Sie beinhaltet folgende Aktivit"aten:
 \end{itemize}
 
 Sie endet mit der Auslieferung und der Wartung der Software und resultiertert in einer maximalen Kundenzufriedenheit.
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{./images/AbbPhaseneinteilung.png}
-    \captionsetup{name=Abb.,font=footnotesize}
-    \caption{Phaseneinteilung (wasserfallartig) nach Balzert(1998)\supercite{Balzert1998}}
-  \end{figure}
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.5\textwidth]{./images/AbbEntwicklgProzess.png}
-%   \captionsetup{name=Abb.,font=footnotesize}
-%   \caption{Phasen im Software-Entwicklungsprozess (abstrakter Zyklus)}
-% \end{figure}
-
-% \begin{multicols}{2}
-% \vfill\null
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.5\textwidth]{./images/AbbEntwicklgProzess.png}
-%   \captionsetup{name=Abb.,font=footnotesize}
-%   \caption{Phasen im Software-Entwicklungsprozess (abstrakter Zyklus)}
-% \end{figure}
-% \vfill\null
-% \columnbreak
-% \textbf{Entwicklung}
-% \newline
-% Die Software-Entwicklung hat die Aufgabe ein Produkt zu erstellen, das die geforderten Qualit"atseigenschaften besitzt. Der Entwicklungsprozess wird im Allgemeinen in eine Reihe von Aktivit"aten aufgeteilt, deren Ergebnisse einzelne Teilprodukte sind. Solche Aktivit"aten werden nach zeitlichen, begrifflichen, technischen und/oder organisatorischen Kriterien zu Phasen zusammengefasst.
-% \smallbreak
-% \textbf{Management}
-% \newline
-% Das Software-Management ist erforderlich, um den Entwicklungsprozess zu planen, zu organisieren, zu leiten und zu kontrollieren. Entwicklung und Management im Software-Entwicklungsprozess sind vielfach voneinander abh"angig. Die Einf"uhrung ne"ur Methoden und Tools kann zu Ver"anderungen in den organisatorischen Strukturen f"uhren.
-% \smallbreak
-% \textbf{Qualit"atssicherung}
-% \newline
-% Die Sicherstellung einer geforderten Softwarequalit"at muss durch eine entwicklungsbegleitende Software-Qualit"atssicherung erreicht werden. Dazu sind eine Reihe von konstruktiven und analytischen Ma"ssnahmen durchzuf"uhren. Die Ma"ssnahmen der Qualit"atssicherung werden dabei sowohl von der Entwicklung (die verwendeten Methoden, Tools und Programmiersprachen erfordern bestimmte Sicherungs- und Pr"ufma"ssnahmen), als auch vom Management durch organisatorische Zuordnung der Qualit"atssicherung zum Entwicklungsprozess beeinflusst.
-% % \smallbreak
-% \vfill\null
-% \columnbreak
-%
-% \textbf{Wartung und Pflege}
-% \newline
-% Nachdem ein Softwareprodukt zur Anwendung freigegeben wurde, beginnt die Wartung und Pflege, d. h. es gilt alle nach Inbetriebnahme auftretenden Fehler zu beseitigen, das Anwendungssystem an ver"anderte Bedingungen anzupassen und es bei Vorliegen ne"ur Anforderungen weiterz"untwickeln. Art und Umfang der Wartungst"atigkeiten sind auch von der Gew"ahrleistung der Qualit"atssicherung abh"angig, d. h. eine schlechte Produktqualit"at f"uhrt zwangsl"aufig zu h"aufigeren Fehleranteilen.
-% \end{multicols}
-
-% \begin{multicols}{2}
-%   \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.5\textwidth]{./images/AbbPhaseneinteilung.png}
-%     \captionsetup{name=Abb.,font=footnotesize}
-%     \caption{Phaseneinteilung nach Balzert}
-%   \end{figure}
-% \end{multicols}
-
-
-
-
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./images/AbbPhaseneinteilung.png}
+  \captionsetup{name=Abb.,font=footnotesize}
+  \caption{Phaseneinteilung (wasserfallartig) nach Balzert(1998)\supercite{Balzert1998}}
+\end{figure}
 
 
 %-------------------------------------------------------------------------------
@@ -402,7 +379,97 @@ Geben Sie bitte zu jedem Prinzip der Softwaretechnik (Abstraktion, Strukturierun
 \bigbreak
 \bigbreak
 \subsubsection*{L"osung:}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occ"acat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\textbf{Abstraktion}
+- Beispiel: Authentifizierungslogik einer Applikation
+\smallbreak
+Angenommen es gibt in einer Applikation verschiedene Sichtweise auf eine Applikation.
+\smallbreak
+Zum Beispiel eine normale User-Sicht welche in ihren Rechten beschraenkt ist und es dadurch eingeschraenkte Nutzungsmoeglichkeiten gibt.
+Gerade bei der Entwicklung einer ACL bzw einer Rollenbasierten Authentifizierung innerhalb einer Applikation benutzt man Abstraktion um nicht alle Rechte/Rollen und deren Konsequenzen bis ins Detail zu konkretisieren, sondern ein abstraktes Modell der Rechte zu entwickeln.
+Man spricht dabei zum Beispiel von einem User-Kontext und einen Administrativen-Kontext.
+
+In Bezugnahme zu sogenannten CRUD Anwendungen sind in dem User Kontext nur lesende Zugriffe auf das Inhaltsmodell moeglich , wohingegen in dem Administrativen Kontext ein Vollzugriff moeglich ist.
+
+Der Komplexitaetsgrad steigt mit dem Funktionsumfang, wenn man zum Beispiel dem User erlaubt eigene Crud Inhalte in vollem Umfang zu verwalten - so muss man das Inhaltsmodell an das Usermodell binden.
+Um die Komplexitaet in diesem Fall einzugrenzen bedient man sich zum Beispiel der klassenbildenden Abstraktion. Man abstrahiert den Sachverhalt auf gemeinsame Merkmale (im obigen Beispiel das R - Read) und bildet spezielle Merkmale (C - Create , U - Update und D - Delete).
+
+Im obigen Beispiel wird die Inhaltsmenge die man aus dem User-Kontext konsumieren kann als Teilmenge der aus dem Administrativen-Kontext gegebenen Inhaltsmenge angesehen.
+Man konkretisiert diese Inhaltsmenge nicht sondern abstrahiert nur deren Authentifizierung darauf. Durch Abstraktion ist es moeglich das komplexe Problem Authentifizierung auf verschiedene Ebenen zu verteilen. Diese Trennung wird durch das Erfassen des Wesentlichen und das Weglassen von Besonderem realisiert.
+
+
+
+\textbf{Strukturierung}
+- Beispiel: Architektur einer Webapplikation (MVC Pattern)
+
+Das Prinzip der Strukturierung kann man am Beispiel des Architektur Patterns MVC sehr gut erklaeren.
+Es strukturiert eine Applikation durch die Trennung des Inhalt (Business Logik - Controller) vom Design (das Frontend - Design).
+Es hat den Vorteil das das Frontend unabhaengig (parallel) vom Entwicklungsstand der Applikation entwickelt werden kann - das Prinzip hat eine grosse Bedeutung fuer den Entwicklungsprozess einer Applikation.
+
+Mithilfe von Development-Seeds bzw. Dummy Data ist es dem Frontend Entwickler moeglich abgetrennt von der Business Logik zu entwickeln - es stellt somit eine elementare Basis fuer die Arbeitsteilung dar.
+
+Darueberhinaus hilft es bei der Bewaeltigung der Komplexitaet und fuehrt zu einer erhoehten Verstaendlichkeit fuer Produkt und Prozess.
+
+Durch Abtrennung dieser Domaenen erhoeht es zu dem die Wartbarkeit und die Einarbeitung in ein fremdes Softwareprodukt (reverse engineering).
+
+Als Beispiel koennte man den klassisches Entwicklungsprozess einer Webapplikation anfuehren. Es wird unabhaengig vom Controller die View entwickelt.
+Die View (Frontend) kann auch erstmal mit hardcodierten Inhalten entwickelt werden und spaeter mittels Templating mit produktiven Daten gefuellt werden.
+
+Oft kommen die produktiven Daten aus diversen Subsystemen (Backend) die fuer einzelne Entwickler nicht allumfassend ueberschaubar sind.
+Das Frontend muss sich also bei guter Gesamtstrukturierung nicht um die Richtigkeit/Validitaet der Daten kuemmern und kann sich voll und ganz auf die View's konzentrieren , ist also nicht verantwortlich fuer die Datengenerierung sondern nur fuer die Darstellung.
+
+Ein weiteres Beispiel fuer Strukturierung ist das Prinzip der Partials in einem Applikationsfrontend. Durch Partials ist es moeglich ein Problem nur einmal zu definieren/auszuprogrammieren und entspricht dem DRY Best-Practise der Softwaretechnik.
+
+\textbf{Hierarchisierung}
+
+Das Prinzip der Hierarchisierung ist ein Spezialfall der Strukturisierung und bezeichnet eine Rangordung.
+
+Als Beispiel kann man das Prinzip der Partials noch einmal aufgreifen. Dort wird eine Struktur der Applikation ausgehend von einem Main/Layout Partial hierrarchisch realisiert.
+Die Applikation wird in Sektionen strukturiert. Es werden also bestimmte Sektionen in den Code injeziert (yielding).
+
+Es ist also moeglich eine Applikation in Hauptseiten und Unterseiten bzgl. der Hierarchie zu strukturieren.
+Das Prinzip der Hierarchie liegt eine Baumstruktur - in diesem Fall als Wurzel das Mainpartial - zu grunde.
+
+
+\textbf{Modularisierung}
+
+In jedem Oekosystem einer Programmiersprache hat man Moeglichkeiten auf Module zurueckzugreifen und bestimmte Probleme nicht noch einmal loesen zu muessen. (Ueber dieverse Packagemanager (npm, gems, composer, maven/ant, pip etc.))
+
+Ein Modul bietet die Moeglichkeit der Aufgliederung eines Softwaresystems in diverse Subsysteme. Das hat den Vorteil das die Komplexitaet durch das Prinzip ``divide and conquer'' gebaendigt wird.
+Diese Module bieten diverse Schnittstellen fuer den In/Output und sind in sich abgeschlossen und wiederverwendbar.
+
+Darueberhinaus sind Module in sich wartbar (vom Maintainer) und abgekapselt vom Hauptsystem.
+
+Ich hatte zum Beispiel in Java das Problem der Serialization/Deserialization von JSON.
+Natuerlich haette ich auch das Rad neu erfinden koennen und es mit den Werkzeugen der Programmiersprache selbst loesen koennen.
+Viel einfacher ging das aber ueber ein Modul von Google GSON was eine Abstraktionsebene dazwischen geschalten hat und letztlich schneller zum Erfolg fuehrte.
+
+Oder die Authentifizierung gegenueber eines LDAP dort habe ich auf ein composer package ADLAP2 zurueckgegriffen was genau das tut was ich moechte. Ich musste nicht verstehen wie es die Authentifizierung gegenueber einen LDAP genau macht - ich musste nur verstehen es anzuwenden.
+
+Als Anlaufstelle fuer diverse Packages Module in diversen Sprachen nutze ich immer wieder Github - weil dort 99\% aller meiner Probleme schon geloest sind und ich mich der eigentlich Problematik meines Systems widmen kann.
+
+Es geht mittlerweile soweit das ich an diversen stelle schon Contribute weil ich Nutzungsszenarien entdecke die so vom Modul noch nicht bedacht sind.
+
+Problematisch sehe ich jedoch das ich durch die Nutzung von Fremdmodulen mich in eine Abhaengigkeit des Packages/Modules begebe. Oft werden diverse Packages umgebaut (die schnittstellen veraendert) das ein Upgrade so nicht einfach moeglich ist.
+Darueberhinaus sehe ich es als problematisch an gerade bei sensiblen funktionen (authentifizierung einer applikation) nicht nur auf die funktionalitaet eines moduls zu vertrauen sondern viel mehr auf die kompetenz des entwickelnden.
+dem gegenueber steht die opensource bewegung wo jeder auf den Code schauen kann und issues schreiben kann und contributen kann.
+
+
+
+
+\textbf{Standardisierung}
+
+Das Prinzip der Standardisierung beinhaltet die Vereinheitlichung des Entwicklungsprozesses und des Produktes. Der wichtigste Aspekt ist die Kostenminifizierung. Der Aufwand wird gemindert durch das Einfuehren von Standards.
+Es entwickelte sich dazu das Paradigma ``Convention over Configuration'', was die Konvention vor die Konfiguration stellt und so den Konfigurationsaufwand mindert. (siehe Ruby on Rails)
+
+Ich erlebe in meiner berfulichen Welt staendig Standards mit denen ich konfrontiert werde.
+Angefangen bei ganz banalen Sachen wie die Camel-Case Notation in der Namensgebung von Variablen/Methoden/Klassen.
+Aber auch die Namensgebung bestimmter Branches (Feature Branches) inklusive Issue Nummer.
+
+Ich denke das Standards die Qualitaet der Zuarbeit immens erhoehen koennen.
+Das faengt beim einrichten der Entwicklungsumgebung an so das wir bei XP (Pairprogramming) eine Dev-Environment haben wo wir uns schnell einarbeiten und produktiv werden, ueber die Namensgebung bis hin zu den Zusammenfassen von Commits bei einem MergeRequest im GIT.
+
+Alles unter dem Aspekt ein Enhancement zu haben bzgl. des kollaborativen Arbeitens.
+
 
 %-------------------------------------------------------------------------------
 % #4
@@ -456,7 +523,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 \subsubsection*{Aufgabe:}
 
 \begin{framed}
-\textbf{Fehlerq"ullen}
+\textbf{Fehlerquellen}
 \smallbreak
 H"aufige Fehlerq"ullen in Softwareprojekten sind:
 \bigbreak
