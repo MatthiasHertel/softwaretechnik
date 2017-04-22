@@ -1,17 +1,73 @@
 @startuml
-actor employee
-actor admin
-actor user
-
-
-left to right direction
+'frontmatter'
+title CMDB - configurated management database - Internes Management System \n Ressourcenmanagement
 skinparam packageStyle rectangle
-admin --|> user
+left to right direction
+
+
+'actors'
+
+actor clusteradmin_employee
+actor developer_employee
+actor managenemt_employee
+actor employee
+actor "abstracter user" as user << Human >>
 employee --|> user
-rectangle checkout {
-  customer -- (checkout)
-  (checkout) .> (payment) : include
-  (help) .> (checkout) : extends
-  (checkout) -- clerk
+clusteradmin_employee --|> employee
+developer_employee --|> employee
+managenemt_employee --|> employee
+
+actor admin << Human >>
+
+'actor monitor
+actor ganglia << Application >>
+actor nagios << Application >>
+
+
+
+
+
+note left of admin : eg. Applikations Admin
+note bottom of user : eg. Mitarbeiter der Firma
+
+'use cases'
+
+usecase "CMDB Application" as CMDB << Main >>
+'usecase "der user generiert repots aus der cmdb" as "Report"
+
+
+
+
+'AnotherActor -> UCUseTheApplication
+'AnotherActor -> UC3
+'User .up.> UC1
+'user --> UC1
+'admin --> UC2 : transaction
+
+
+
+
+
+
+rectangle CMDB {
+  'foreignsys -- (generate information)
+  ''(data polling) -- Monitor
+  admin -- (manage db schema)
+  'admin -- (manage db schema)
+  admin -- (manage configuration items)
+  admin -- (Security)
+  admin -- (Manage User Roles - ACL)
+  (polling) -- Monitor
+  (polling) -> (manage db schema) : affects
+  user -- (reporting)
+  user -- (Ressourcenmanagement)
+
 }
+
+rectangle "Fremdsystem - Polling \n Monitoring/Alerting " as Monitor {
+  (generiert metainfos zu den configuration items) -- ganglia
+  (generiert metainfos zu den configuration items) -- nagios
+}
+
+
 @enduml

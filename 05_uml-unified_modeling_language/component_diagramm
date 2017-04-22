@@ -1,0 +1,25 @@
+@startuml
+
+database "MySql" as Mysql{
+  MYSQL - [ DBMS Component]
+
+}
+
+node "CMDB Env" as CMDB {
+  [CMDB Component]
+}
+
+node "HTTP Env" as Webfrontend{
+  HTTP - [ Web Component]
+}
+
+node "Polling Sys" as Polling {
+  [Ganglia Component] --> RRD :round robin database
+  [Nagios Component] --> RRD :round robin database
+  RRD --> TCP
+}
+
+ Webfrontend - Polling
+ Webfrontend - Mysql
+
+@enduml
