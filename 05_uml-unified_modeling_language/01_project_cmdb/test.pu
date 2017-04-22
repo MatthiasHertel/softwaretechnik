@@ -26,6 +26,8 @@ Foo1 -> Foo1 : To self
 alt successful case
 Foo1 -> Foo2: Successful condition
 else some kind of failure
-Foo1 -> Foo4: Failed condition
+Foo1 -> Foo4: Failed condition/adsas
 end
+
+
 @enduml

@@ -1,0 +1,81 @@
+@startuml
+title "Resource Area - HPC on demand IaaS"
+
+left to right direction
+
+actor Customer <<Human>>
+actor Admin_fe <<Human>>
+actor Ansible as Admin_be <<Application>>
+
+rectangle RA_BackEnd << ClusterBackend >>{
+  usecase "Provisionierung der Server" as uc1ba
+  usecase "Storage bereitstellen" as uc2ba
+  usecase "Software Repository verwalten" as uc3ba
+  (uc1ba) -- Admin_be
+  (uc2ba) -- Admin_be
+  (uc3ba) -- Admin_be
+
+}
+
+
+rectangle RA_FrontEnd << Webfrontend >>{
+  usecase "Login" as fe_uc1
+  Customer -- (fe_uc1)
+   /''Admin_fe -- (fe_uc1)'/
+
+  usecase "Buchung HPC Ressource" as fe_uc2
+  Customer -- (fe_uc2)
+  usecase "Upload" as fe_uc5
+  usecase "Download" as fe_uc6
+  usecase "Lizenz/Software auswaehlen" as fe_uc9
+  usecase "Produkte/Server auswaehlen" as fe_uc4
+  fe_uc2 -- (fe_uc5) :include
+  fe_uc2 -- (fe_uc9) :include
+  fe_uc2 -- (fe_uc4) :include
+  fe_uc2 -- (fe_uc12) :include
+  Customer -- (fe_uc8)
+
+  usecase "Abschluss" as fe_uc13
+  usecase "Rechnung einsehen" as fe_uc11a
+  usecase "Bezahlen" as fe_uc11c
+  Customer -- (fe_uc13)
+  fe_uc13 -- (fe_uc6) :include
+  fe_uc13 -- fe_uc11a :include
+  fe_uc13 -- fe_uc11c :include
+
+
+  usecase "Queue Management" as fe_uc20
+  Customer -- fe_uc20
+  Admin_fe -- fe_uc20
+  usecase "Buchung managen" as fe_uc3
+  Admin_fe -- (fe_uc3)
+  usecase "Accounts managen" as fe_uc7
+  Admin_fe -- (fe_uc7)
+   /''Admin_fe -- (fe_uc4)'/
+
+  usecase "Monitoring/Alerting" as fe_uc8
+  usecase "Emails versenden" as fe_uc8a
+  fe_uc8 -- fe_uc8a :include
+   /''Customer -- fe_uc8'/
+  Admin_fe -- fe_uc8
+  usecase "Software/Lizenz managen" as fe_uc10
+  Admin_fe -- fe_uc10
+   /''fe_uc10 -- fe_uc9
+  fe_uc2 -- fe_uc3'/
+   /''fe_uc10 -- fe_uc9'/
+  usecase "Invoice Management" as fe_uc11
+  Admin_fe -- fe_uc11
+
+  usecase "Rechnung generieren" as fe_uc11b
+
+  fe_uc11 -- fe_uc11b :include
+  usecase "Select Payment Method" as fe_uc12
+
+}
+
+RA_FrontEnd -- RA_BackEnd
+
+
+ /''package'/
+
+@enduml
