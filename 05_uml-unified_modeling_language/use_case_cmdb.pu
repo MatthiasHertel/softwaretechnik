@@ -1,0 +1,17 @@
+@startuml
+actor employee
+actor admin
+actor user
+
+
+left to right direction
+skinparam packageStyle rectangle
+admin --|> user
+employee --|> user
+rectangle checkout {
+  customer -- (checkout)
+  (checkout) .> (payment) : include
+  (help) .> (checkout) : extends
+  (checkout) -- clerk
+}
+@enduml
