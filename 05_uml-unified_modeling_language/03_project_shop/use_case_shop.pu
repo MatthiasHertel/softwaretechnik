@@ -20,15 +20,15 @@ actor "Communication System" <<system>> as cs
 actor "Account Mangagement System" <<system>> as ams
 
 /''system rectangle - highlevel'/
-rectangle "Shop \nCustomer-Context" <<high level>>{
-  /''usecases for customer (initial)'/
+rectangle "Shop \nCustomer-Context" {
+  /''usecases for intial actors'/
   customer --> (login)
   customer --> (logout)
   customer --> (register)
   customer --> (search product)
   customer --> (buy product)
 
-   /''usecases secondary actors'/
+  /''usecases secondary actors'/
   (login) -- ams
   (logout) -- ams
   (register) -- ams
@@ -38,8 +38,8 @@ rectangle "Shop \nCustomer-Context" <<high level>>{
   (search product) -- ics
 }
 
-rectangle "Shop \nAdmin-Context" << high level>> {
-  /''usecases for admin (initial)'/
+rectangle "Shop \nAdmin-Context" {
+  /''usecases for intial actors'/
   (product management) <-- admin
   (user management) <-- admin
 
@@ -69,21 +69,23 @@ actor "Account Mangagement System" <<system>> as ams
 actor "Communication System" <<system>> as cs
  /''actor "Inventory Control System" <<system>> as ics'/
 
-/''system rectangle - sublevel 1'/
-rectangle "Shop \n Customer-Context" <<sub level auth>> {
-  /''usecases for customer (initial)'/
+/''system rectangle - sublevel Auth'/
+rectangle "Shop \n Customer-Context" {
+  /''usecases for intial actors'/
   customer --> (login)
+  customer --> (logout)
+  customer --> (register)
+   /''extended usecases'/
   (login) -- (view profile) :extends
   (view profile) -- (manage profile) :extends
   (manage profile) -- (delete profile) :extends
   (manage profile) -- (update profile) :extends
   (manage profile) -- (unsubscribe newsletter) :extends
-   /''(login) -- (find product) :extends
-  (find product) -- (save to basket) :extends'/
-  customer --> (logout)
-  customer --> (register)
-  (register) -- (double opt in) :include
   (register) -- (subscribe newsletter) :extends
+  /''included usecases'/
+  (register) -- (double opt in) :include
+
+  /''usecases for secondary actors'/
   (double opt in) -- cs
   (subscribe newsletter) -- cs
   (unsubscribe newsletter) -- cs
@@ -92,6 +94,32 @@ rectangle "Shop \n Customer-Context" <<sub level auth>> {
    /''TODO: reicht es aus wenn wenn der usecase manage profile mit dem ams verbunden ist ?'/
   (delete profile) -- ams
   (update profile) -- ams
+}
+
+
+/'
+%-------------------------------------------------------------------------------
+% Sub Level Buy a Product
+%-------------------------------------------------------------------------------
+'/
+
+/''frontmatter/preambel'/
+newpage
+title "Shop - Sub level (Buy a Product)"
+left to right direction
+
+/''actors'/
+/''humans'/
+actor "Customer" <<human>> as customer
+/''systems'/
+
+
+/''system rectangle - sublevel buy a product '/
+rectangle "Shop \n Customer-Context"{
+  /''usecases for intial actors'/
+  /''extended usecases'/
+  /''included usecases'/
+  /''usecases for secondary actors'/
 }
 
 
