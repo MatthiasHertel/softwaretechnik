@@ -1,9 +1,14 @@
 @startuml
- /''frontmatter/preambel'/
+
+/'
+%-------------------------------------------------------------------------------
+% High Level
+%-------------------------------------------------------------------------------
+'/
+
+/''frontmatter/preambel'/
 title "Shop - High level \n keep it short and simple (kiss)"
 left to right direction
-skinparam packageStyle rect
-
 
 /''actors'/
 /''humans'/
@@ -13,9 +18,6 @@ actor "Admin" <<human>> as admin
 actor "Inventory Control System" <<system>> as ics
 actor "Communication System" <<system>> as cs
 actor "Account Mangagement System" <<system>> as ams
-
-
-
 
 /''system rectangle - highlevel'/
 rectangle "Shop \nCustomer-Context" <<high level>>{
@@ -47,11 +49,22 @@ rectangle "Shop \nAdmin-Context" << high level>> {
 
 }
 
+/'
+%-------------------------------------------------------------------------------
+% Sub Level Auth
+%-------------------------------------------------------------------------------
+'/
 
+/''frontmatter/preambel'/
 newpage
 title "Shop - Sub level (Auth)"
 left to right direction
+
+/''actors'/
+/''humans'/
 actor "Customer" <<human>> as customer
+
+/''systems'/
 actor "Account Mangagement System" <<system>> as ams
 actor "Communication System" <<system>> as cs
  /''actor "Inventory Control System" <<system>> as ics'/
@@ -64,7 +77,7 @@ rectangle "Shop \n Customer-Context" <<sub level auth>> {
   (view profile) -- (manage profile) :extends
   (manage profile) -- (delete profile) :extends
   (manage profile) -- (update profile) :extends
-  (manage profile) -- (unsubscribe newsleter) :extends
+  (manage profile) -- (unsubscribe newsletter) :extends
    /''(login) -- (find product) :extends
   (find product) -- (save to basket) :extends'/
   customer --> (logout)
@@ -73,7 +86,7 @@ rectangle "Shop \n Customer-Context" <<sub level auth>> {
   (register) -- (subscribe newsletter) :extends
   (double opt in) -- cs
   (subscribe newsletter) -- cs
-  (unsubscribe newsleter) -- cs
+  (unsubscribe newsletter) -- cs
   (double opt in) -- ams
   (manage profile) -- ams
    /''TODO: reicht es aus wenn wenn der usecase manage profile mit dem ams verbunden ist ?'/
