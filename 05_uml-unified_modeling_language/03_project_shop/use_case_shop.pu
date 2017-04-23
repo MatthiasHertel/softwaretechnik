@@ -1,0 +1,85 @@
+@startuml
+ /''frontmatter/preambel'/
+title "Shop - High level \n keep it short and simple (kiss)"
+left to right direction
+skinparam packageStyle rect
+
+
+/''actors'/
+/''humans'/
+actor "Customer" <<human>> as customer
+actor "Admin" <<human>> as admin
+/''systems'/
+actor "Inventory Control System" <<system>> as ics
+actor "Communication System" <<system>> as cs
+actor "Account Mangagement System" <<system>> as ams
+
+
+
+
+/''system rectangle - highlevel'/
+rectangle "Shop \nCustomer-Context" <<high level>>{
+  /''usecases for customer (initial)'/
+  customer --> (login)
+  customer --> (logout)
+  customer --> (register)
+  customer --> (search product)
+  customer --> (buy product)
+
+   /''usecases secondary actors'/
+  (login) -- ams
+  (logout) -- ams
+  (register) -- ams
+  (register) -- cs
+  (buy product) -- cs
+  (buy product) -- ics
+  (search product) -- ics
+}
+
+rectangle "Shop \nAdmin-Context" << high level>> {
+  /''usecases for admin (initial)'/
+  (product management) <-- admin
+  (user management) <-- admin
+
+  /''usecases secondary actors'/
+  ams -- (user management)
+  ics -- (product management)
+
+}
+
+
+newpage
+title "Shop - Sub level (Auth)"
+left to right direction
+actor "Customer" <<human>> as customer
+actor "Account Mangagement System" <<system>> as ams
+actor "Communication System" <<system>> as cs
+ /''actor "Inventory Control System" <<system>> as ics'/
+
+/''system rectangle - sublevel 1'/
+rectangle "Shop \n Customer-Context" <<sub level auth>> {
+  /''usecases for customer (initial)'/
+  customer --> (login)
+  (login) -- (view profile) :extends
+  (view profile) -- (manage profile) :extends
+  (manage profile) -- (delete profile) :extends
+  (manage profile) -- (update profile) :extends
+  (manage profile) -- (unsubscribe newsleter) :extends
+   /''(login) -- (find product) :extends
+  (find product) -- (save to basket) :extends'/
+  customer --> (logout)
+  customer --> (register)
+  (register) -- (double opt in) :include
+  (register) -- (subscribe newsletter) :extends
+  (double opt in) -- cs
+  (subscribe newsletter) -- cs
+  (unsubscribe newsleter) -- cs
+  (double opt in) -- ams
+  (manage profile) -- ams
+   /''TODO: reicht es aus wenn wenn der usecase manage profile mit dem ams verbunden ist ?'/
+  (delete profile) -- ams
+  (update profile) -- ams
+}
+
+
+@enduml
