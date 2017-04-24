@@ -36,18 +36,20 @@ node "Load Balancer" as lb_back {
 }
 
 node "Persistence Layer" as dbl {
-  frame "Database Server 1" {
+  frame "Database Server 1" as db_1 {
     database "Account Schema" as db_1a
     database "Product Schema" as db_1b
     database "Invoice/Order Schema" as db_1c
 
   }
-  frame "Database Server 2" {
-    [Database Server 2a] as db_2a
-    [Database Server 2b] as db_2b
+  frame "Database Server 2" as db_2 {
+    database "Account Schema" as db_2a
+    database "Product Schema" as db_2b
+    database "Invoice/Order Schema" as db_2c
+
   }
-  frame "Database Server ..." {
-    [Database Server ...] as db_...
+  frame "Database Server ..." as db_x {
+    [Database Server ...] as db_xx
   }
 }
 
@@ -66,11 +68,17 @@ as_2a -- lb_back1
 as_2b -- lb_back1
 as_... -- lb_back1
 
-lb_back1 -- db_1a
+/'lb_back1 -- db_1a
 lb_back1 -- db_1b
+lb_back1 -- db_1c
 lb_back1 -- db_2a
 lb_back1 -- db_2b
-lb_back1 -- db_...
+lb_back1 -- db_2c
+lb_back1 -- db_x'/
+
+lb_back1 -- db_1
+lb_back1 -- db_2
+lb_back1 -- db_x
 
 
 /'skinparam componentStyle uml2
