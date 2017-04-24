@@ -1,0 +1,16 @@
+@startuml
+title Buy a Product
+
+(*) --> "Select Product"
+
+if "Access granted" then
+  ->[true] "start buying proccess"
+  --> "terminate buying process"
+  --> (*)
+
+else
+  -down->[false] "Login/Register Loop"
+  --> "start buying proccess"
+endif
+
+@enduml
