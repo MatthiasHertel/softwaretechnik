@@ -3,14 +3,26 @@ title Buy a Product
 
 (*) --> "Select Product"
 
+ /''pre condition - acces is granted'/
 if "Access granted" then
-  ->[true] "start buying proccess"
+  ->[User is logged in] "start buying proccess"
   --> "terminate buying process"
   --> (*)
 
 else
-  -down->[false] "Login/Register Loop"
-  --> "start buying proccess"
+  -left->[Anonymous User] "Login/Register Loop"
+  if "login" then
+  -up-> [access] "start buying proccess"
+  else
+   /''TODO Anonymous buying is a use case ?'/ 
+  -down-> [denied] "register proccess"
+    if "register\n success?" then
+    -up-> [true] "Login/Register Loop"
+    else
+    -right-> [false] "register help"
+    -up-> [register again] "register proccess"
+    endif
+  endif
 endif
 
 @enduml
