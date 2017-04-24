@@ -4,7 +4,7 @@ title Buy a Product
 (*) --> "Select Product"
 
  /''pre condition - acces is granted'/
-if "Access granted" then
+if "User state" then
   ->[User is logged in] "start buying proccess"
   --> "terminate buying process"
   --> (*)
@@ -12,9 +12,9 @@ if "Access granted" then
 else
   -left->[Anonymous User] "Login/Register Loop"
   if "login" then
-  -up-> [access] "start buying proccess"
+  -up-> [granted] "start buying proccess"
   else
-   /''TODO Anonymous buying is a use case ?'/ 
+   /''TODO Anonymous buying is a use case ?'/
   -down-> [denied] "register proccess"
     if "register\n success?" then
     -up-> [true] "Login/Register Loop"
