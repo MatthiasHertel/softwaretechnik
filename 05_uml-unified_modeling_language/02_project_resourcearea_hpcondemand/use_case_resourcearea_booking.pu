@@ -21,7 +21,7 @@ rectangle RA_BackEnd << ClusterBackend >>{
 rectangle RA_FrontEnd << Webfrontend >>{
   usecase "Login" as fe_uc1
   Customer -- (fe_uc1)
-   /''Admin_fe -- (fe_uc1)'/
+   /'Admin_fe -- (fe_uc1)'/
 
   usecase "Buchung HPC Ressource" as fe_uc2
   Customer -- (fe_uc2)
@@ -51,18 +51,18 @@ rectangle RA_FrontEnd << Webfrontend >>{
   Admin_fe -- (fe_uc3)
   usecase "Accounts managen" as fe_uc7
   Admin_fe -- (fe_uc7)
-   /''Admin_fe -- (fe_uc4)'/
+   /'Admin_fe -- (fe_uc4)'/
 
   usecase "Monitoring/Alerting" as fe_uc8
   usecase "Emails versenden" as fe_uc8a
   fe_uc8 -- fe_uc8a :include
-   /''Customer -- fe_uc8'/
+   /'Customer -- fe_uc8'/
   Admin_fe -- fe_uc8
   usecase "Software/Lizenz managen" as fe_uc10
   Admin_fe -- fe_uc10
-   /''fe_uc10 -- fe_uc9
+   /'fe_uc10 -- fe_uc9
   fe_uc2 -- fe_uc3'/
-   /''fe_uc10 -- fe_uc9'/
+   /'fe_uc10 -- fe_uc9'/
   usecase "Invoice Management" as fe_uc11
   Admin_fe -- fe_uc11
 
@@ -76,6 +76,6 @@ rectangle RA_FrontEnd << Webfrontend >>{
 RA_FrontEnd -- RA_BackEnd
 
 
- /''package'/
+ /'package'/
 
 @enduml
