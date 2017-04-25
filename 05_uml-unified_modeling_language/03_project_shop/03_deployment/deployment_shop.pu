@@ -1,20 +1,32 @@
 @startuml
 title Deployment Shop
 left to right direction
-cloud "Presentation Layer" as pl {
-  frame "Client" as pl_client {
-    node "Browser" as web {
-      [Website-Frontend]
+node "Kunde Website" as pl {
+  component "<<OS>> \n : Betriebssystem" as pl_client {
+    component "<<user interface>>" as web0 {
+      [Website] as ui1
     }
-    node "Mobile Devices" as app {
-      [IOS]
-      [Android]
+  }
+}
+node "Kunde Mobile Device" as pl1 {
+  component "<<OS>> \n : Betriebssystem" as pl_client1 {
+    component "<<user interface>>" as web1 {
+      [Ios / Android] as ui2
     }
   }
 }
 
-node "Load Balancer" as lb_front {
-  [Proxy Balancer] as lb_front1
+
+node ": Balancer" as lb_front {
+  component "WebProxyNode1" as WPN1 {
+    component "<<OS>>" as WPN1_OS {
+      component "<<execution environment>> \n www.acme.de Apache/Nginx" as WPN1_execenv {
+        component "<<application>> \n :mod_proxy" as lb_front1 {
+
+        }
+      }
+    }
+  }
 }
 
 node "Application Layer" as al {
@@ -49,18 +61,19 @@ node "Persistence Layer" as dbl {
 
   }
   frame "Database Server ..." as db_x {
-    [Database Server ...] as db_xx
+    database "Database Server ..." as db_xx
   }
 }
 
 /'assoziationen'/
-pl_client -- lb_front1 :http
+ui1 -- lb_front1 :internet
+ui2 -- lb_front1 :internet
 
-lb_front1 -- as_1a
+/'lb_front1 -- as_1a
 lb_front1 -- as_1b
 lb_front1 -- as_2a
 lb_front1 -- as_2b
-lb_front1 -- as_...
+lb_front1 -- as_...'/
 
 as_1a -- lb_back1
 as_1b -- lb_back1
@@ -79,6 +92,9 @@ lb_back1 -- db_x'/
 lb_back1 -- db_1
 lb_back1 -- db_2
 lb_back1 -- db_x
+
+db_1 -down- db_2 :replication
+db_2 -down- db_x :replication
 
 
 /'skinparam componentStyle uml2
