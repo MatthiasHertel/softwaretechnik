@@ -186,7 +186,7 @@ Aus dieser Definition k"onnen folgende Merkmale der \gls{st} benannt werden:
 Dumke(2001)\supercite{Dumke2001} nimmt eine Einteilung in f"unf Kategorien vor:
 \bigbreak
 \begin{itemize}
-\item \textbf{Methoden (development methods)}: \smallbreak Richtlinien, Strategien, und Technologien f"ur eine systematische, d. h. phasen- oder schrittweise Entwicklung von Software
+\item \textbf{Methoden (development methods)}: \smallbreak Richtlinien, Strategien und Technologien f"ur eine systematische, d. h. phasen- oder schrittweise Entwicklung von Software
 
 \item \textbf{Werkzeuge (tools)}: \smallbreak rechnergest"utzte Hilfsmittel zur Software-Entwicklung und -Anwendung
 
@@ -243,15 +243,15 @@ Die Software-Entwicklung hat die Aufgabe ein Produkt zu erstellen, das die gefor
 \smallbreak
 \textbf{Management}
 \newline
-Das Software-Management ist erforderlich, um den Entwicklungsprozess zu \textbf{planen}, zu \textbf{organisieren}, zu \textbf{leiten} und zu \textbf{kontrollieren}. Entwicklung und Management im Software-Entwicklungsprozess sind vielfach voneinander abh"angig. Die Einf"uhrung ne"ur Methoden und Tools kann zu Ver"anderungen in den organisatorischen Strukturen f"uhren.
+Das Software-Management ist erforderlich, um den Entwicklungsprozess zu \textbf{planen}, zu \textbf{organisieren}, zu \textbf{leiten} und zu \textbf{kontrollieren}. Entwicklung und Management im Software-Entwicklungsprozess sind vielfach voneinander abh"angig. Die Einf"uhrung neuer Methoden und Tools kann zu Ver"anderungen in den organisatorischen Strukturen f"uhren.
 \smallbreak
 \textbf{Qualit"atssicherung}
 \newline
-Die Sicherstellung einer geforderten Softwarequalit"at muss durch eine entwicklungsbegleitende Software-Qualit"atssicherung erreicht werden. Dazu sind eine Reihe von konstruktiven und analytischen Ma"ssnahmen durchzuf"uhren. Die Ma"ssnahmen der Qualit"atssicherung werden dabei sowohl von der Entwicklung (die verwendeten Methoden, Tools und Programmiersprachen erfordern bestimmte Sicherungs- und Pr"ufma"ssnahmen), als auch vom Management durch organisatorische Zuordnung der Qualit"atssicherung zum Entwicklungsprozess beeinflusst.
+Die Sicherstellung einer geforderten Softwarequalit"at muss durch eine entwicklungsbegleitende Software-Qualit"atssicherung erreicht werden. Dazu sind eine Reihe von konstruktiven und analytischen Ma"snahmen durchzuf"uhren. Die Ma"snahmen der Qualit"atssicherung werden dabei sowohl von der Entwicklung (die verwendeten Methoden, Tools und Programmiersprachen erfordern bestimmte Sicherungs- und Pr"ufma"snahmen), als auch vom Management durch organisatorische Zuordnung der Qualit"atssicherung zum Entwicklungsprozess beeinflusst.
 \smallbreak
 \textbf{Wartung und Pflege}
 \newline
-Nachdem ein Softwareprodukt zur Anwendung freigegeben wurde, beginnt die Wartung und Pflege, d. h. es gilt alle nach Inbetriebnahme auftretenden Fehler zu beseitigen, das Anwendungssystem an ver"anderte Bedingungen anzupassen und es bei Vorliegen ne"ur Anforderungen weiterz"untwickeln. Art und Umfang der Wartungst"atigkeiten sind auch von der Gew"ahrleistung der Qualit"atssicherung abh"angig, d. h. eine schlechte Produktqualit"at f"uhrt zwangsl"aufig zu h"aufigeren Fehleranteilen.
+Nachdem ein Softwareprodukt zur Anwendung freigegeben wurde, beginnt die Wartung und Pflege, d. h. es gilt alle nach Inbetriebnahme auftretenden Fehler zu beseitigen, das Anwendungssystem an ver"anderte Bedingungen anzupassen und es bei Vorliegen neuer Anforderungen weiterzuentwickeln. Art und Umfang der Wartungst"atigkeiten sind auch von der Gew"ahrleistung der Qualit"atssicherung abh"angig, d. h. eine schlechte Produktqualit"at f"uhrt zwangsl"aufig zu h"aufigeren Fehleranteilen.
 
 %-------------------------------------------------------------------------------
 % Phasen der Entwicklung (wasserfallartig)
@@ -273,7 +273,7 @@ Diese Phase l"asst sich in folgende Aktivit"aten unterteilen:
 \begin{itemize}
 \item in eine Voruntersuchung (Marktanalyse, Trends, Kundenanfragen - \enquote{Idea Dump}),
 \item eine Erhebung der Ist-Situation,
-\item eine Erstellung einer Uebersicht der Bestandteile (\enquote{Information Architecture}),
+\item eine Erstellung einer "Ubersicht der Bestandteile (\enquote{Information Architecture}),
 \item eine Durchf"uhrbarkeitsuntersuchung (\enquote{Proof of Concept})
 \end{itemize}
 Diese m"unden in einem Projektplan und einer aus der Wirtschaftlichkeitsbetrachtung ergebenden Projektkalkulation.
@@ -320,7 +320,7 @@ Sie beinhaltet folgende Aktivit"aten:
   \item Pr"ufung des Zusammenwirkens der Systemkomponenten unter realen Bedingungen
   \item Feststellen und Beseitigen der Fehler im Softwaresystem
 \end{itemize}
-Sie m"undet in einer Bereitstellung der Q"ulltexte f"ur die Systemkomponenten, der Protokolle der Komponententests und Systemtests und generierten Datenobjekten und Datenstrukturen.
+Sie m"undet in einer Bereitstellung der Quelltexte f"ur die Systemkomponenten, der Protokolle der Komponententests und Systemtests und generierten Datenobjekten und Datenstrukturen.
 \bigbreak
 \underline{\textbf{4. Quality-Assurance Phase:}}
 \smallbreak
@@ -382,53 +382,54 @@ Geben Sie bitte zu jedem Prinzip der Softwaretechnik (Abstraktion, Strukturierun
 \textbf{Abstraktion}
 - Beispiel: Modellbildung - User (Authentifizierung)
 \smallbreak
-Angenommen es gibt in einer Applikation verschiedene Sichtweise auf eine Applikation.
-\smallbreak
-Zum Beispiel eine normale User-Sicht welche in ihren Rechten beschr"ankt ist und es dadurch eingeschr"ankte Nutzungsm"oglichkeiten gibt.
-Gerade bei der Entwicklung einer ACL bzw einer Rollenbasierten Authentifizierung innerhalb einer Applikation benutzt man Abstraktion um nicht alle Rechte/Rollen und deren Konsequenzen bis ins Detail zu konkretisieren, sondern ein abstraktes Modell der Rechte zu entwickeln.
-Man spricht dabei zum Beispiel von einem User-Kontext und einen Administrativen-Kontext.
+Angenommen es gibt in einer Applikation verschiedene Sichtweisen.
+Zum Beispiel eine normale User-Sicht welche in ihren Rechten beschr"ankt ist und sich daraus eingeschr"ankte Nutzungsm"oglichkeiten ergeben.
+Gerade bei der Entwicklung einer ACL (Access-Control-List) bzw. einer rollenbasierten Authentifizierung innerhalb einer Applikation benutzt man Abstraktionen um nicht alle Rechte/Rollen und deren Konsequenzen bis ins Detail zu konkretisieren, sondern ein abstraktes Modell der Rechte zu entwickeln.
+Man spricht dabei zum Beispiel von einem Benutzer-Kontext und einen Administrativen-Kontext.
 
-In Bezugnahme zu sogenannten CRUD Anwendungen sind in dem User Kontext nur lesende Zugriffe auf das Inhaltsmodell m"oglich , wohingegen in dem Administrativen Kontext ein Vollzugriff m"oglich ist.
+In Bezugnahme zu sogenannten CRUD-Anwendungen sind in dem Benutzer-Kontext nur lesende Zugriffe auf das Inhaltsmodell m"oglich , wohingegen in dem Administrativen-Kontext ein Vollzugriff m"oglich ist.
 
-Der Komplexit"atsgrad steigt mit dem Funktionsumfang, wenn man zum Beispiel dem User erlaubt eigene Crud Inhalte in vollem Umfang zu verwalten - so muss man das Inhaltsmodell an das Usermodell binden.
-Um die Komplexit"at in diesem Fall einzugrenzen bedient man sich zum Beispiel der klassenbildenden Abstraktion. Man abstrahiert den Sachverhalt auf gemeinsame Merkmale (im obigen Beispiel das R - Read) und bildet spezielle Merkmale (C - Create , U - Update und D - Delete).
+Der Komplexit"atsgrad steigt mit dem Funktionsumfang, wenn man zum Beispiel dem User erlaubt eigene CRUD-Inhalte in vollem Umfang zu verwalten - so muss das Inhaltsmodel an das Usermodel gebunden werden.
+Um die Komplexit"at in diesem Fall einzugrenzen bedient man sich zum Beispiel der klassenbildenden Abstraktion. Man abstrahiert den Sachverhalt auf die gemeinsamen Merkmale (im obigen Beispiel das R - Read) und bildet spezielle Merkmale (C - Create , U - Update und D - Delete).
 
-Im obigen Beispiel wird die Inhaltsmenge die man aus dem User-Kontext konsumieren kann als Teilmenge der aus dem Administrativen-Kontext gegebenen Inhaltsmenge angesehen.
+Im obigen Beispiel wird die Inhaltsmenge die man aus dem Benutzer-Kontext konsumieren kann als Teilmenge der aus dem Administrativen-Kontext gegebenen Inhaltsmenge angesehen.
 Man konkretisiert diese Inhaltsmenge nicht sondern abstrahiert nur deren Authentifizierung darauf. Durch Abstraktion ist es m"oglich das komplexe Problem Authentifizierung auf verschiedene Ebenen zu verteilen. Diese Trennung wird durch das Erfassen des Wesentlichen und das Weglassen von Besonderem realisiert.
 
-
+\newpage
 
 \textbf{Strukturierung}
 - Beispiel: Architektur einer Webapplikation (MVC Pattern)
 
 Das Prinzip der Strukturierung kann man am Beispiel des Architektur Patterns MVC sehr gut erkl"aren.
-Es strukturiert eine Applikation durch die Trennung des Inhalts (Business Logik - Controller) vom Design (das Frontend - Design).
-Es hat den Vorteil das das Frontend unabh"angig (parallel) vom Entwicklungsstand der Applikation entwickelt werden kann - das Prinzip hat eine grosse Bedeutung f"ur den Entwicklungsprozess einer Applikation.
+Es strukturiert eine Applikation durch die Trennung des Inhalts (Business Logik - Controller) vom Design (das Frontend - View).
 
-Mithilfe von Development-Seeds ist es dem Frontend Entwickler m"oglich abgetrennt von der Business Logik zu entwickeln - es stellt somit eine elementare Basis f"ur die Arbeitsteilung dar.
+Der Vorteil liegt in der unabh"angigen Entwicklung des Frontends vom Entwicklungsstand der Applikation. Es erm"oglicht somit eine parallele Entwicklung von Front- und Backend. Das Prinzip hat eine gro"se Bedeutung f"ur den Entwicklungsprozess einer Applikation.
+% Es hat den Vorteil das Frontend unabh"angig (parallel) vom Entwicklungsstand der Applikation entwickelt werden kann - das Prinzip hat eine grosse Bedeutung f"ur den Entwicklungsprozess einer Applikation.
+
+Mithilfe von Development-Seeds (f"ur die Entwicklung k"unstlich erstellte Datenbest"ande) ist es dem Frontend Entwickler m"oglich abgetrennt von der Business Logik zu entwickeln - es stellt somit eine elementare Basis f"ur die Arbeitsteilung dar.
 
 Dar"uberhinaus hilft es bei der Bew"altigung der Komplexit"at und f"uhrt zu einer erh"ohten Verst"andlichkeit f"ur Produkt und Prozess.
 
-Durch Abtrennung dieser Dom"anen erh"oht es zu dem die Wartbarkeit und die Einarbeitung in ein fremdes Softwareprodukt (Reverse Engineering).
+Durch Abtrennung dieser Dom"anen erh"oht es zudem die Wartbarkeit und die Einarbeitung in ein fremdes Softwareprodukt (Reverse-Engineering).
 
-Als Beispiel k"onnte man den klassisches Entwicklungsprozess einer Webapplikation anf"uhren. Es wird unabh"angig vom Controller die View entwickelt.
-Die View (Frontend) kann auch erstmal mit hardcodierten Inhalten entwickelt werden und sp"ater mittels Templating mit produktiven Daten gef"ullt werden.
+Als Beispiel k"onnte man den klassischen Entwicklungsprozess einer Webapplikation anf"uhren. Es wird unabh"angig vom Controller die View entwickelt.
+Die View (Frontend) kann auch erst einmal mit hardcodierten Inhalten entwickelt werden und sp"ater mittels Templating mit produktiven Daten gef"ullt werden.
 
 Oft kommen die produktiven Daten aus diversen Subsystemen (Backend) die f"ur einzelne Entwickler nicht allumfassend "uberschaubar sind.
-Das Frontend muss sich also bei guter Gesamtstrukturierung nicht um die Richtigkeit/Validit"at der Daten k"ummern und kann sich voll und ganz auf die View's konzentrieren , ist also nicht verantwortlich f"ur die Datengenerierung sondern nur f"ur die Darstellung der Daten.
+Das Frontend muss sich also bei guter Gesamtstrukturierung nicht um die Richtigkeit/Validit"at der Daten k"ummern und kann sich voll und ganz auf die Entwicklung der View's konzentrieren.
 
-Ein weiteres Beispiel f"ur Strukturierung ist das Prinzip der Partials in einem Applikationsfrontend. Durch Partials ist es m"oglich ein Problem nur einmal zu definieren/auszuprogrammieren und entspricht dem DRY Best-Practise der Softwaretechnik.
+Ein weiteres Beispiel f"ur Strukturierung ist das Prinzip der ``Partials'' in einem Applikationsfrontend. Durch Partials ist es m"oglich ein Problem nur einmal zu definieren/auszuprogrammieren und entspricht dem DRY (``Don't repeat Yourself'') Best-Practise der Softwaretechnik.
 
 \textbf{Hierarchisierung}
 - Beispiel: Partial-Hierarchie
 
 Das Prinzip der Hierarchisierung ist ein Spezialfall der Strukturisierung und bezeichnet eine Rangordung.
 
-Als Beispiel kann man das Prinzip der Partials noch einmal aufgreifen. Dort wird eine Struktur der Applikation ausgehend von einem Main/Layout Partial hierrarchisch realisiert.
+Als Beispiel kann man das Prinzip der Partials noch einmal aufgreifen. Dort wird eine Struktur der Applikation ausgehend von einem Main/Layout-Partial hierrarchisch realisiert.
 Die Applikation wird in Sektionen strukturiert. Es werden also bestimmte Sektionen in den Code injeziert (``Yielding'').
 
 Es ist also m"oglich eine Applikation in Hauptseiten und Unterseiten bzgl. der Hierarchie zu strukturieren.
-Das Prinzip der Hierarchie liegt eine Baumstruktur - in diesem Fall liegt als Wurzel das Mainpartial zu grunde.
+Das Prinzip der Hierarchie liegt einer Baumstruktur zu grunde. (Das Main/Layout-Partial stellt in diesem Fall die Wurzel dar.)
 
 \newpage
 \textbf{Modularisierung}
@@ -442,24 +443,24 @@ Diese Module bieten diverse Schnittstellen f"ur den In/Output und sind in sich a
 Dar"uberhinaus sind Module in sich wartbar (vom Maintainer) und abgekapselt vom Hauptsystem. Der Nachteil sind die entstehenden Abh"angigkeiten - Dependencies.
 
 Ich hatte zum Beispiel in Java das Problem der Serialization/Deserialization von JSON.
-Nat"urlich h"atte ich auch das Rad neu erfinden k"onnen und es mit den Werkzeugen der Programmiersprache selbst l"osen k"onnen. (Aus einem String einen JSON bauen koennen.)
-Viel einfacher ging das aber "uber ein Modul von Google GSON was eine Abstraktionsebene dazwischen geschalten hat und letztlich schneller zum Erfolg f"uhrte.
+Nat"urlich h"atte ich auch das Rad neu erfinden k"onnen und es mit den Werkzeugen der Programmiersprache selbst l"osen k"onnen. (Aus einem String einen JSON bauen k"onnen.)
+Viel einfacher ging das aber "uber ein Modul/Paket von Google GSON, welches eine Abstraktionsebene dazwischen geschalten hat und letztlich schneller zum zur Probleml"osung f"uhrte.
 
-Oder die Authentifizierung gegen"uber eines Domaincontrollers ueber das LDAP-Protokoll, dort habe ich auf ein Composer-Package ADLAP2 zur"uckgegriffen was die Authentifizierung gegen einen Domaincontroller erm"oeglichte. Ich musste nicht verstehen wie es die Authentifizierung gegen"uber einen LDAP genau macht - ich musste nur verstehen es anzuwenden , die Schnittstellen verwenden. (e.g. Traits des Usermodells).
+Ein weiteres Beispiel w"are die Authentifizierung gegen"uber eines Domaincontrollers "uber das LDAP-Protokoll.
+Hierbei habe ich auf ein Composer-Package ADLAP2 zur"uckgegriffen, welches die Authentifizierung gegen einen Domaincontroller erm"oeglichte.
+Dabei musste ich nicht die genaue Funktionsweise verstehen, sondern lediglich die Anwendung des Modules "uber ihre Schnittstellen.
 
-Als Anlaufstelle f"ur diverse Packages Module in diversen Sprachen nutze ich auch immer wieder Github - weil dort 99\% aller meiner Probleme in einer Form schon gel"ost wurden und ich sie auf dei jeweilige Anforderung meines Systems abstrahieren kann.
+Als Anlaufstelle f"ur Packages/Module in diversen Sprachen nutze ich "uberwiegend Github - weil dort 99\% aller meiner Probleme in einer Form schon gel"ost wurden und ich sie auf die jeweilige Anforderung meines Systems abstrahieren kann.
 
-Es geht mittlerweile soweit das ich an diversen stelle schon Contribute weil ich Nutzungsszenarien entdecke die so vom Modul noch nicht bedacht sind.
+Es geht mittlerweile soweit, dass ich an diversen Stellen Contribute (Code beitrage) da ich Nutzungsanforderungen entdecke die vom Modul/Package noch nicht abgedeckt werden.
 
-Problematisch sehe ich jedoch das durch die Nutzung von Fremdmodulen Abh"angigkeiten zu dem jeweiligen Package/Modul entstehen k"onnen und die Gefahr besteht das es aufgrunder der Abh"angigkeit Probleme gibt bei einem Major-Update des Hauptsystems.
+Problematisch sehe ich jedoch das durch die Nutzung von Fremdmodulen Abh"angigkeiten zu dem jeweiligen Package/Modul entstehen k"onnen und die Gefahr besteht das es aufgrund der Abh"angigkeit Probleme gibt bei einem Major-Update des Hauptsystems.
 
+Dar"uberhinaus sehe ich es als problematisch an, gerade bei sensiblen Mechanismen e.g. Authentifizierung einer Applikation, nicht nur auf die Funktionalit"at eines Moduls/Packages zu vertrauen, sondern viel mehr auf die Kompetenz der Entwickler in Bezug auf die Sicherheit eines Softwaresystems.
 
-Dar"uberhinaus sehe ich es als problematisch an gerade bei sensiblen Mechanismen (e.g. Authentifizierung einer Applikation) nicht nur auf die Funktionalit"at eines Moduls/Packages zu vertrauen sondern viel mehr auf die Kompetenz der Entwickler in Bezug auf die Sicherheit eines Softwaresystems.
+Dem gegen"uber steht die Open-Source Bewegung wo jeder Code-Review betreiben kann und die Software so qualitativ hochwertiger ist in Bezug auf deren Sicherheit.
 
-Dem gegen"uber steht die Open-Source Bewegung wo jeder Code Review betreiben kann und die Software so qualitativ hochwertiger ist in Bezug auf deren Sicherheit.
-
-Ein Paper zu der Problematik: \par
-https://arxiv.org/pdf/1704.02786.pdf
+(Ein Paper zu der Problematik: https://arxiv.org/pdf/1704.02786.pdf)
 
 
 \newpage
@@ -477,8 +478,8 @@ bis hin zu einer Kodierung, die strikt vereinbarte Regel (Code Convention) einh"
 Beispielhaft einige betriebsinterne Konventionen f"ur Git:
 \begin{itemize}
   \item Namensgebung der Fix Branches / Feature Branches (Issue \# + description)
-  \item Vorlagen f"ur Commit-Messages um die Code-Review Maintenence zu optimieren.
-  \item Vor einem Merge-Request ``commit squashing - has the benefit of keeping your git history tidy''
+  \item Vorlagen f"ur Commit-Messages
+  \item Vor einem Merge-Request alle Commits in einem Commit zusammenzufassen  (``commit squashing - has the benefit of keeping your git history tidy'')
 
 \end{itemize}
 
@@ -503,22 +504,22 @@ Recherchieren Sie bitte im Internet "uber Softwaretechnik oder Softwareengineeri
 
 Die Softwaretechnik gliedert sich in mehrere spannende Teilbereiche.
 
-Mich pers"onlich intressiert besonders das Build-Management. Das automatisierte ``Bauen'' (und ``Testen'') einer Software in Hinblick auf eine reibungslose kontinuierliche Auslieferung (Continous Integration/Delivery) einer Software.
+Mich pers"onlich intressiert besonders das Build-Management. Das automatisierte ``Bauen'' (und ``Testen'') einer Software im Hinblick auf eine reibungslose kontinuierliche Auslieferung (Continous Integration/Delivery) einer Software.
 
 Softwaresysteme sind meines Erachtens immer lebende Projekte, die nie wirklich abgeschlossen sind und sich inkrementell stets verbessern oder eine neue Anwendung als ``Dependency'' in einem anderen Softwaresystem finden (oder geforked und abgewandelt werden).
 Aus dieser lebendigen Eigendynamik ergeben sich immer neue Abh"angigkeiten/Anforderungen/Herausforderungen an das Projekt.
 
-Dar"uberhinaus interessiert mich vor allem die Vertiefung der Arbeit mit einem Versions Control System, insbesondere mit Git.
-Ein Verst"andnis fuer einen Git-Flow zu entwickeln. Wie man das Einfliessen von neuem Codes (Contributions) managed.
+Dar"uber hinaus interessiert mich vor allem die Vertiefung der Arbeit mit einem Versions Control System, insbesondere mit Git.
+Ein Verst"andnis f"ur einen Git-Flow zu entwickeln. Wie man zum Beispiel das Einfliessen von neuem Code (Contributions) organisiert.
 
 Sehr spannend fande ich in diesem Zusammenhang auch das Einhalten einer Konvention zur Versionierung (Semantic-Versioning) um der ``Dependency Hell'' Einhalt zu gebieten.
 
 Zus"atzlich bin ich st"andig an der Optimierung der Deployment-Pipeline interessiert.
-Als zentraler Bestandteil der ``Continous Delivery'' wird dabei st"andig neuer Code released und dieser Vorgang(build , test, deploy) sollte automatisiert sein.
+Als zentraler Bestandteil der ``Continous Delivery'' wird dabei st"andig neuer Code released. Dieser Vorgang(build , test, deploy) sollte automatisiert ablaufen.
 
-Ansonsten interessiert mich auch das Anforderungsmanagement um ein Gef"uhl zu entwickeln den Scope eines Softwareprojektes besser absch"atzen zu k"onnen.
+Ansonsten interessiert mich auch das Anforderungsmanagement um ein Gef"uhl zu entwickeln den Umfang/Scope eines Softwareprojektes besser absch"atzen zu k"onnen.
 
-Einen Weitblick zu entwickeln um effektiver und zielgerichteter arbeiten zu k"onnen oder das Projekt in die richtige Richtung zuleiten.
+Einen Weitblick zu entwickeln um effektiver und zielgerichteter arbeiten zu k"onnen und das Projekt in die richtige Richtung zu leiten.
 
 %-------------------------------------------------------------------------------
 % #5
@@ -548,20 +549,20 @@ Versuchen Sie die Fragen schriftlich zu beantworten ohne noch einmal in der Lern
 \smallbreak
 \textbf{DRY} (Don't repeat yourself)
 
-Ich habe fuer mich sehr verinnerlicht Probleme nur an einer Stelle zu l"osen und die L"osung universell zug"anglich zu machen. Sollte die Probleml"osung erweitert werden - ge"andert werden so gibt es nur eine Stelle im Code wo das gefixed werden muss.
-Auch Anforderungen Dinge zu automatisieren um das Einrichten einer Dev-Environment oder das Deployen zu automatisieren um mehr Zeit in die eigentliche Probleml"osung investieren zu k"onnen.
+Ich habe besonders verinnerlicht Probleme nur an einer Stelle zu l"osen und die L"osung universell zug"anglich zu machen und mich nicht zu wiederholen. Sollte einmal die Probleml"osung erweitert oder ge"andert werden so gibt es nur eine Stelle im Code wo das erledigt/gefixed werden muss.
+Ich bin stets daran interessiert bestimmte Vorg"ange zu automatisieren. Das vermindert die Fehleranf"alligkeit und ist produktiver.
 
 \textbf{KISS} (Keep it short and simple)
 
-Diese Best-Practise beinhaltet den Ansatz Probleme/Anforderungen einfach und zielorientiert zu l"osen. Ein gutes Pferd springt nur so hoch wie es muss um auch die n"achste H"urde noch nehmen zu k"onnen.
-Bei der Entwicklung ist es immer ein Dreieck aus Zeit/Geld und Qualitaet. Natuerlich erwartet man eine qualitativ hochwertiges Ergebnis was in Abh"angigkeit von der investierten Zeit und Geld steht.
+Dieses Best-Practise beinhaltet den Ansatz Probleme/Anforderungen einfach und zielorientiert zu l"osen. Ein gutes Pferd springt nur so hoch wie es muss um auch die n"achste H"urde noch nehmen zu k"onnen.
+Bei der Entwicklung ist es immer ein Dreieck aus Zeit,Geld und Qualit"at. Nat"urlich erwartet man ein qualitativ hochwertiges Ergebnis was in Abh"angigkeit von der investierten Zeit und Geld steht.
 Die Dinge zu simplifizieren mindert den Zeitanspruch und man hat mehr Zeit qualitativ hochwertiger zu entwickeln.
 
-Auch bei der Problemdefinition ist das KISS-Prinzip sehr wichtig um die Dinge auf den Punkt zu bringen , das Abstrahieren einer Problemstellung durch Weglassen von unwesentlichen Elementen. (s.a. ``25 Words or less'')
+Auch bei der Problemdefinition ist das KISS-Prinzip sehr wichtig um die Dinge auf den Punkt zu bringen. Zum Beispiel das Abstrahieren einer Problemstellung durch Weglassen von unwesentlichen Elementen. (s.a. \textbf{``25 Words or less''})
 \newpage
 \textbf{No Bang} (divide and conquer)
 
-Es ist einfach die gro"se und komplexe Problemstellung in kleinere Probleme zu unterteilen. Der Code wird sauber strukturierter und ist universell anwendbarer als alles in einem ``Bang'' zu haben. Das hilft bei der Entwicklung einer ``Knowledge Repository'' weil man viele kleine L"osungen (``Snippets'') f"ur die Probleme deren man sich in anderen Projekten bedienen kann.
+Es ist einfacher die gro"se und komplexe Problemstellung in kleinere Probleme zu unterteilen. Der Code wird sauber strukturiert und ist dadurch universell anwendbarer. Das hilft bei der Entwicklung einer ``Knowledge Repository'', weil man viele kleine L"osungen (``Snippets'')hat, an denen man sich bei der L"osung weiterer Probleme in anderen Projekten bedienen kann.
 
 \textbf{Vorgehensmodell}
 
@@ -595,7 +596,7 @@ In einem komplexen Softwaresystem ist es wichtig Fehler fr"uhzeitig zu erkennen 
 \item falsche Sch"atzung ben"otigter Ressourcen
 \item schlecht definierte Requirements
 \item schlechte Berichte "uber Projektfortschritt
-\item nicht gemanagete Risiken
+\item nicht gemanagte Risiken
 \item schlechte Kommunikation zwischen Kunden, Entwicklern und Benutzern
 \item Verwendung unausgereifter Technologie
 \item Unf"ahigkeit, die Projektkomplexit"at in den Griff zu kriegen
