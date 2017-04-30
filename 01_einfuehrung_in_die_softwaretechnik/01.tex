@@ -380,7 +380,7 @@ Geben Sie bitte zu jedem Prinzip der Softwaretechnik (Abstraktion, Strukturierun
 \bigbreak
 \subsubsection*{L"osung:}
 \textbf{Abstraktion}
-- Beispiel: Authentifizierungslogik einer Applikation
+- Beispiel: Modellbildung - User (Authentifizierung)
 \smallbreak
 Angenommen es gibt in einer Applikation verschiedene Sichtweise auf eine Applikation.
 \smallbreak
@@ -402,75 +402,85 @@ Man konkretisiert diese Inhaltsmenge nicht sondern abstrahiert nur deren Authent
 - Beispiel: Architektur einer Webapplikation (MVC Pattern)
 
 Das Prinzip der Strukturierung kann man am Beispiel des Architektur Patterns MVC sehr gut erkl"aren.
-Es strukturiert eine Applikation durch die Trennung des Inhalt (Business Logik - Controller) vom Design (das Frontend - Design).
+Es strukturiert eine Applikation durch die Trennung des Inhalts (Business Logik - Controller) vom Design (das Frontend - Design).
 Es hat den Vorteil das das Frontend unabh"angig (parallel) vom Entwicklungsstand der Applikation entwickelt werden kann - das Prinzip hat eine grosse Bedeutung f"ur den Entwicklungsprozess einer Applikation.
 
-Mithilfe von Development-Seeds bzw. Dummy Data ist es dem Frontend Entwickler m"oglich abgetrennt von der Business Logik zu entwickeln - es stellt somit eine elementare Basis f"ur die Arbeitsteilung dar.
+Mithilfe von Development-Seeds ist es dem Frontend Entwickler m"oglich abgetrennt von der Business Logik zu entwickeln - es stellt somit eine elementare Basis f"ur die Arbeitsteilung dar.
 
 Dar"uberhinaus hilft es bei der Bew"altigung der Komplexit"at und f"uhrt zu einer erh"ohten Verst"andlichkeit f"ur Produkt und Prozess.
 
-Durch Abtrennung dieser Dom"anen erh"oht es zu dem die Wartbarkeit und die Einarbeitung in ein fremdes Softwareprodukt (reverse engineering).
+Durch Abtrennung dieser Dom"anen erh"oht es zu dem die Wartbarkeit und die Einarbeitung in ein fremdes Softwareprodukt (Reverse Engineering).
 
 Als Beispiel k"onnte man den klassisches Entwicklungsprozess einer Webapplikation anf"uhren. Es wird unabh"angig vom Controller die View entwickelt.
 Die View (Frontend) kann auch erstmal mit hardcodierten Inhalten entwickelt werden und sp"ater mittels Templating mit produktiven Daten gef"ullt werden.
 
 Oft kommen die produktiven Daten aus diversen Subsystemen (Backend) die f"ur einzelne Entwickler nicht allumfassend "uberschaubar sind.
-Das Frontend muss sich also bei guter Gesamtstrukturierung nicht um die Richtigkeit/Validit"at der Daten k"ummern und kann sich voll und ganz auf die View's konzentrieren , ist also nicht verantwortlich f"ur die Datengenerierung sondern nur f"ur die Darstellung.
+Das Frontend muss sich also bei guter Gesamtstrukturierung nicht um die Richtigkeit/Validit"at der Daten k"ummern und kann sich voll und ganz auf die View's konzentrieren , ist also nicht verantwortlich f"ur die Datengenerierung sondern nur f"ur die Darstellung der Daten.
 
 Ein weiteres Beispiel f"ur Strukturierung ist das Prinzip der Partials in einem Applikationsfrontend. Durch Partials ist es m"oglich ein Problem nur einmal zu definieren/auszuprogrammieren und entspricht dem DRY Best-Practise der Softwaretechnik.
 
 \textbf{Hierarchisierung}
+- Beispiel: Partial-Hierarchie
 
 Das Prinzip der Hierarchisierung ist ein Spezialfall der Strukturisierung und bezeichnet eine Rangordung.
 
 Als Beispiel kann man das Prinzip der Partials noch einmal aufgreifen. Dort wird eine Struktur der Applikation ausgehend von einem Main/Layout Partial hierrarchisch realisiert.
-Die Applikation wird in Sektionen strukturiert. Es werden also bestimmte Sektionen in den Code injeziert (yielding).
+Die Applikation wird in Sektionen strukturiert. Es werden also bestimmte Sektionen in den Code injeziert (``Yielding'').
 
 Es ist also m"oglich eine Applikation in Hauptseiten und Unterseiten bzgl. der Hierarchie zu strukturieren.
-Das Prinzip der Hierarchie liegt eine Baumstruktur - in diesem Fall als Wurzel das Mainpartial - zu grunde.
+Das Prinzip der Hierarchie liegt eine Baumstruktur - in diesem Fall liegt als Wurzel das Mainpartial zu grunde.
 
 \newpage
 \textbf{Modularisierung}
+- Beispiel: Packagemanager in Programmiersprachen
 
-In jedem Oekosystem einer Programmiersprache hat man M"oglichkeiten auf Module zur"uckzugreifen und bestimmte Probleme nicht noch einmal l"osen zu m"ussen. (Ueber dieverse Packagemanager (npm, gems, composer, maven/ant, pip etc.))
+In jedem "Okosystem einer Programmiersprache hat man M"oglichkeiten auf Module/Pakete zur"uckzugreifen und bestimmte Probleme nicht noch einmal l"osen zu m"ussen. (diverse Packagemanager: npm - node.js, gems - ruby, composer - php, maven - java, pip - python , cmake - c))
 
-Ein Modul bietet die M"oglichkeit der Aufgliederung eines Softwaresystems in diverse Subsysteme. Das hat den Vorteil das die Komplexit"at durch das Prinzip ``divide and conquer'' geb"andigt wird.
+Ein Modul/Paket bietet die M"oglichkeit der Aufgliederung eines Softwaresystems in diverse Subsysteme. Das hat den Vorteil das die Komplexit"at durch das Prinzip ``divide and conquer'' geb"andigt wird.
 Diese Module bieten diverse Schnittstellen f"ur den In/Output und sind in sich abgeschlossen und wiederverwendbar.
 
-Dar"uberhinaus sind Module in sich wartbar (vom Maintainer) und abgekapselt vom Hauptsystem.
+Dar"uberhinaus sind Module in sich wartbar (vom Maintainer) und abgekapselt vom Hauptsystem. Der Nachteil sind die entstehenden Abh"angigkeiten - Dependencies.
 
 Ich hatte zum Beispiel in Java das Problem der Serialization/Deserialization von JSON.
-Nat"urlich h"atte ich auch das Rad neu erfinden k"onnen und es mit den Werkzeugen der Programmiersprache selbst l"osen k"onnen.
+Nat"urlich h"atte ich auch das Rad neu erfinden k"onnen und es mit den Werkzeugen der Programmiersprache selbst l"osen k"onnen. (Aus einem String einen JSON bauen koennen.)
 Viel einfacher ging das aber "uber ein Modul von Google GSON was eine Abstraktionsebene dazwischen geschalten hat und letztlich schneller zum Erfolg f"uhrte.
 
-Oder die Authentifizierung gegen"uber eines LDAP dort habe ich auf ein composer package ADLAP2 zur"uckgegriffen was genau das tut was ich m"ochte. Ich musste nicht verstehen wie es die Authentifizierung gegen"uber einen LDAP genau macht - ich musste nur verstehen es anzuwenden.
+Oder die Authentifizierung gegen"uber eines Domaincontrollers ueber das LDAP-Protokoll, dort habe ich auf ein Composer-Package ADLAP2 zur"uckgegriffen was die Authentifizierung gegen einen Domaincontroller erm"oeglichte. Ich musste nicht verstehen wie es die Authentifizierung gegen"uber einen LDAP genau macht - ich musste nur verstehen es anzuwenden , die Schnittstellen verwenden. (e.g. Traits des Usermodells).
 
-Als Anlaufstelle f"ur diverse Packages Module in diversen Sprachen nutze ich immer wieder Github - weil dort 99\% aller meiner Probleme schon gel"ost sind und ich mich der eigentlich Problematik meines Systems widmen kann.
+Als Anlaufstelle f"ur diverse Packages Module in diversen Sprachen nutze ich auch immer wieder Github - weil dort 99\% aller meiner Probleme in einer Form schon gel"ost wurden und ich sie auf dei jeweilige Anforderung meines Systems abstrahieren kann.
 
 Es geht mittlerweile soweit das ich an diversen stelle schon Contribute weil ich Nutzungsszenarien entdecke die so vom Modul noch nicht bedacht sind.
 
-Problematisch sehe ich jedoch das ich durch die Nutzung von Fremdmodulen mich in eine Abh"angigkeit des Packages/Modules begebe. Oft werden diverse Packages umgebaut (die schnittstellen ver"andert) das ein Upgrade so nicht einfach m"oglich ist.
-Dar"uberhinaus sehe ich es als problematisch an gerade bei sensiblen funktionen (authentifizierung einer applikation) nicht nur auf die funktionalit"at eines moduls zu vertrauen sondern viel mehr auf die kompetenz des entwickelnden.
-Dem gegen"uber steht die Open-Source Bewegung wo jeder Code Review betreiben kann und Issues tracken kann und Contributen kann.
+Problematisch sehe ich jedoch das durch die Nutzung von Fremdmodulen Abh"angigkeiten zu dem jeweiligen Package/Modul entstehen k"onnen und die Gefahr besteht das es aufgrunder der Abh"angigkeit Probleme gibt bei einem Major-Update des Hauptsystems.
 
-Ein schoenes Paper zu der Problematik:
+
+Dar"uberhinaus sehe ich es als problematisch an gerade bei sensiblen Mechanismen (e.g. Authentifizierung einer Applikation) nicht nur auf die Funktionalit"at eines Moduls/Packages zu vertrauen sondern viel mehr auf die Kompetenz der Entwickler in Bezug auf die Sicherheit eines Softwaresystems.
+
+Dem gegen"uber steht die Open-Source Bewegung wo jeder Code Review betreiben kann und die Software so qualitativ hochwertiger ist in Bezug auf deren Sicherheit.
+
+Ein Paper zu der Problematik: \par
 https://arxiv.org/pdf/1704.02786.pdf
 
 
-
+\newpage
 \textbf{Standardisierung}
+- Beispiel: betriebsinterne Konventionen in der Arbeit mit GIT
 
 Das Prinzip der Standardisierung beinhaltet die Vereinheitlichung des Entwicklungsprozesses und des Produktes. Der wichtigste Aspekt ist die Kostenminifizierung. Der Aufwand wird gemindert durch das Einf"uhren von Standards.
-Es entwickelte sich dazu das Paradigma ``Convention over Configuration'', was die Konvention vor die Konfiguration stellt und so den Konfigurationsaufwand mindert. (siehe Ruby on Rails)
+Es entwickelte sich dazu das Paradigma ``Convention over Configuration'', was die Konvention vor die Konfiguration stellt und so den Konfigurationsaufwand mindert. (e.g. Ruby on Rails)
 
-Ich erlebe in meiner berfulichen Welt st"andig Standards mit denen ich konfrontiert werde.
-Angefangen bei ganz banalen Sachen wie die Camel-Case Notation in der Namensgebung von Variablen/Methoden/Klassen.
-Aber auch die Namensgebung bestimmter Branches (Feature Branches) inklusive Issue Nummer.
+Dies beginnt mit einer schematischen Dokumentation (Dokumentationsvorlage),
+der Verwendung von Standards zur grafischen Modellbeschreibung (UML),
+der Verwendung bew"ahrter Design- (Design-Pattern) und Implementierungs-Muster
+bis hin zu einer Kodierung, die strikt vereinbarte Regel (Code Convention) einh"alt.
 
-Ich denke das Standards die Qualit"at der Zuarbeit immens erh"ohen k"onnen.
-Das f"angt beim einrichten der Entwicklungsumgebung an so das wir bei XP (Pairprogramming) eine Dev-Environment haben wo wir uns schnell einarbeiten und produktiv werden, "uber die Namensgebung bis hin zu den Zusammenfassen von Commits bei einem MergeRequest im GIT.
+Beispielhaft einige betriebsinterne Konventionen f"ur Git:
+\begin{itemize}
+  \item Namensgebung der Fix Branches / Feature Branches (Issue \# + description)
+  \item Vorlagen f"ur Commit-Messages um die Code-Review Maintenence zu optimieren.
+  \item Vor einem Merge-Request ``commit squashing - has the benefit of keeping your git history tidy''
 
-Alles unter dem Aspekt ein Enhancement zu haben bzgl. des kollaborativen Arbeitens.
+\end{itemize}
 
 
 %-------------------------------------------------------------------------------
@@ -551,7 +561,7 @@ Auch bei der Problemdefinition ist das KISS-Prinzip sehr wichtig um die Dinge au
 \newpage
 \textbf{No Bang} (divide and conquer)
 
-Es ist einfach die gro"se und komplexe Problemstellung in kleinere Probleme zu unterteilen. Der Code wird sauber strukturierter und ist universell anwendbarer als alles in einem ``Bang'' zu haben. Das hilft bei der Entwicklung einer ``Knowledge Repository'' weil man viele kleine L"osungen ("Snippets") f"ur die Probleme deren man sich in anderen Projekten bedienen kann.
+Es ist einfach die gro"se und komplexe Problemstellung in kleinere Probleme zu unterteilen. Der Code wird sauber strukturierter und ist universell anwendbarer als alles in einem ``Bang'' zu haben. Das hilft bei der Entwicklung einer ``Knowledge Repository'' weil man viele kleine L"osungen (``Snippets'') f"ur die Probleme deren man sich in anderen Projekten bedienen kann.
 
 \textbf{Vorgehensmodell}
 
@@ -571,7 +581,7 @@ In einem komplexen Softwaresystem ist es wichtig Fehler fr"uhzeitig zu erkennen 
   \centering
   \includegraphics[width=0.8\textwidth]{./images/Aenderungskosten.png}
   \captionsetup{name=Abb.,font=footnotesize}
-  \caption{Änderungskosten in der Softwareentwicklung}
+  \caption{"Anderungskosten in der Softwareentwicklung}
 \end{figure}
 % \begin{center}
 % \includegraphics[width=0.9\textwidth]{./images/Aenderungskosten.png}
@@ -607,10 +617,13 @@ In einem komplexen Softwaresystem ist es wichtig Fehler fr"uhzeitig zu erkennen 
   \item ECMAScript - Javascript -> e.g. Node.js ,V8 (google chrome)
   \item Institute of Electrical and Electronics Engineers (IEEE)
   \item American Standard Code for Information Interchange (ASCII)
+  \item American National Standard Institute (ANSI)
+  \item Department of Defense (DoD)
+  \item Association of Computing Machinary (ACM)
+  \item European Committee for Standardization (DEN)
+  \item Gesellschaft f"ur Informatik e.V. (GI)
 \end{itemize}
-
 \end{enumerate}
-
 
 %-------------------------------------------------------------------------------
 % #6
