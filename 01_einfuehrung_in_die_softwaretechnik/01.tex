@@ -533,7 +533,84 @@ Versuchen Sie die Fragen schriftlich zu beantworten ohne noch einmal in der Lern
 \bigbreak
 \bigbreak
 \subsubsection*{L"osung:}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occ"acat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\begin{enumerate}
+\item Best-Practise:
+\smallbreak
+\textbf{DRY} (Don't repeat yourself)
+
+Ich habe fuer mich sehr verinnerlicht Probleme nur an einer Stelle zu l"osen und die L"osung universell zug"anglich zu machen. Sollte die Probleml"osung erweitert werden - ge"andert werden so gibt es nur eine Stelle im Code wo das gefixed werden muss.
+Auch Anforderungen Dinge zu automatisieren um das Einrichten einer Dev-Environment oder das Deployen zu automatisieren um mehr Zeit in die eigentliche Probleml"osung investieren zu k"onnen.
+
+\textbf{KISS} (Keep it short and simple)
+
+Diese Best-Practise beinhaltet den Ansatz Probleme/Anforderungen einfach und zielorientiert zu l"osen. Ein gutes Pferd springt nur so hoch wie es muss um auch die n"achste H"urde noch nehmen zu k"onnen.
+Bei der Entwicklung ist es immer ein Dreieck aus Zeit/Geld und Qualitaet. Natuerlich erwartet man eine qualitativ hochwertiges Ergebnis was in Abh"angigkeit von der investierten Zeit und Geld steht.
+Die Dinge zu simplifizieren mindert den Zeitanspruch und man hat mehr Zeit qualitativ hochwertiger zu entwickeln.
+
+Auch bei der Problemdefinition ist das KISS-Prinzip sehr wichtig um die Dinge auf den Punkt zu bringen , das Abstrahieren einer Problemstellung durch Weglassen von unwesentlichen Elementen. (s.a. ``25 Words or less'')
+\newpage
+\textbf{No Bang} (divide and conquer)
+
+Es ist einfach die gro"se und komplexe Problemstellung in kleinere Probleme zu unterteilen. Der Code wird sauber strukturierter und ist universell anwendbarer als alles in einem ``Bang'' zu haben. Das hilft bei der Entwicklung einer ``Knowledge Repository'' weil man viele kleine L"osungen ("Snippets") f"ur die Probleme deren man sich in anderen Projekten bedienen kann.
+
+\textbf{Vorgehensmodell}
+
+In Bezug auf die Methodik einer Softwareentwicklung ist es eine Best-Practise ein entsprechendes Vorgehensmodell zu haben. Wenn die Anforderungen nicht klar und in sich abgeschlossen sind, bietet sich eher ein agiles als ein wasserfallartiges Vorgehensmodell an.
+Oftmals k"onnen die Stakeholder eine Anforderung nicht klar und abgeschlossen ausformulieren und es hat sich f"ur mich als Best-Practise erwiesen erst einmal etwas anzubieten und dann in Revision mit den Stakeholdern inkrementell sich den daraus ergebenene Anforderungen anzun"ahern. (agil)
+
+\textbf{Workflow}
+
+Bevor man entwickelt ist es f"ur mich wichtig einen guten Workflow zu haben. Eine Dev-Environment einzurichten die einen effizienten Workflow erm"oglicht und der sp"ateren Prod-Environment entspricht um den Aufwand f"ur das Deployment zu minimieren.
+
+
+\item Warum ist es sinnvoll Softwarefehler fr"uh zu erkennen?
+\smallbreak
+
+In einem komplexen Softwaresystem ist es wichtig Fehler fr"uhzeitig zu erkennen weil sich Abh"angigkeiten auf diesen Fehler entwickeln k"onnen und sich daraus Folgefehler entwickeln. Man sollte die Robustheit einer Probleml"osung stets im Blick haben um die Probleml"osung universell anwendbarerer zu machen. Dabei ist es wichtig die Edge-Cases zu definieren und zu testen. (TDD)
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./images/Aenderungskosten.png}
+  \captionsetup{name=Abb.,font=footnotesize}
+  \caption{Änderungskosten in der Softwareentwicklung}
+\end{figure}
+% \begin{center}
+% \includegraphics[width=0.9\textwidth]{./images/Aenderungskosten.png}
+% \end{center}
+
+\newpage
+\item Was geht in Softwareprojekten typischerweise schief?
+
+\begin{itemize}
+\item unrealistische oder unausgesprochene Projektziele
+\item falsche Sch"atzung ben"otigter Ressourcen
+\item schlecht definierte Requirements
+\item schlechte Berichte "uber Projektfortschritt
+\item nicht gemanagete Risiken
+\item schlechte Kommunikation zwischen Kunden, Entwicklern und Benutzern
+\item Verwendung unausgereifter Technologie
+\item Unf"ahigkeit, die Projektkomplexit"at in den Griff zu kriegen
+\item nachl"assige Entwicklungspraktiken
+\item schlechtes Projektmanagement
+\item ``politische'' Gr"unde der Beteiligten
+\item kommerzieller Druck
+\end{itemize}
+
+
+\item Kennen Sie (Standardisierungs-)Organisationen, die sich mit Software besch"aftigen?
+
+
+\begin{itemize}
+  \item Object Management Group (OMG) -> UML
+  \item Organization for the Advancement of Structured Information Standards (OASIS)
+  \item Deutsches Insitut f"ur Normung (DIN)
+  \item World Wide Web Consortium (W3C) -> XML, HTML
+  \item ECMAScript - Javascript -> e.g. Node.js ,V8 (google chrome)
+  \item Institute of Electrical and Electronics Engineers (IEEE)
+  \item American Standard Code for Information Interchange (ASCII)
+\end{itemize}
+
+\end{enumerate}
+
 
 %-------------------------------------------------------------------------------
 % #6
