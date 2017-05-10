@@ -1,0 +1,111 @@
+@startuml
+title Package Diagramm Shop
+
+left to right direction
+
+
+package de {
+  package shop {
+
+    package config  {
+      Class SecurityConfig
+
+    }
+    package repository  {
+      together {
+        interface UserRepository
+        interface UserPaymentRepository
+        interface OrderRepository
+        interface ProductRepository
+
+      }
+      interface UserShippingRepository
+      interface RoleRepository
+      interface PasswordResetRepository
+      interface ShoppingCartRepository
+      interface ProductToCartItemRepository
+      interface CartItemRepository
+
+    }
+
+
+
+    package domain  {
+      class Product
+      class User
+      class Order
+      class Payment
+      class ProductToCartItem
+      class CartItem
+      class ShoppingCart
+      class UserPayment
+      class UserBilling
+      class UserShipping
+      class BillingAddress
+      class ShippingAddress
+
+      package security {
+        class Authority
+        class PasswordResetToken
+        class Role
+        class UserRole
+
+      }
+    }
+
+    package service  {
+      together {
+        interface ProductService
+        interface OrderService
+        interface UserService
+        interface PaymentService
+        interface BillingAddressService
+        interface CartItemService
+        interface ShippingAddressService
+        interface ShoppingCartService
+        interface UserPaymentService
+        interface UserShippingService
+
+      }
+
+      package impl as group2{
+        class ProductServiceImpl
+        class OrderServiceImpl
+        class UserServiceImpl
+        class PaymentServiceImpl
+        class BillingAddressServiceImpl
+        class CartItemServiceImpl
+        class ShippingAddressServiceImpl
+        class ShoppingCartServiceImpl
+        class UserPaymentServiceImpl
+        class UserShippingServiceImpl
+
+      }
+
+
+    }
+
+
+    package utility  {
+      class MailConstructor
+      class SecurityUtility
+      class DEConstants
+    }
+
+    package controller  {
+      class CheckoutController
+      class HomeController
+      class SearchController
+      class ShoppingCartController
+
+    }
+    domain ---> service
+    utility ---> service
+    controller ---> service
+  }
+
+}
+
+
+
+@enduml
