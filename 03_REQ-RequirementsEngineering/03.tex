@@ -57,7 +57,7 @@
   showstringspaces=false,
   columns=flexible,
   basicstyle={\small\ttfamily},
-  numbers=left,
+  % numbers=left,
   numberstyle=\tiny\color{gray},
   keywordstyle=\color{blue},
   commentstyle=\color{dkgreen},
@@ -187,9 +187,9 @@ Um dem vorzubeugen gibt es einen Master-Branch im Requirements Repository, die n
 \smallbreak
 
 \textbf{checkout:}
-
+\begin{lstlisting}
 git clone git@github.com:MatthiasHertel/productstore.git
-
+\end{lstlisting}
 \newpage
 \subsection{Requirements Gathering Process}
 
@@ -200,7 +200,7 @@ Dazu habe ich das Requirement-Template um das Attribut ``Person Responsible'' er
 \smallbreak
 Neue Requirements werden mittels eines Pull-Requests in das System eingepflegt. Das erh"oht die Datenqualit"at des einzelnen Requirements da sie in Revision gehen k"onnen bis sie die gew"unschte Datenqualit"at erreicht haben und in den Master gemerged werden k"onnen.
 \smallbreak
-Das Einpflegen ne"ur Requirements sollte komfortablerweise f"ur Domainfremde Stakeholder "uber ein Webformular realisiert werden und den oben genannten Einpfleg-Prozess in das Git Repository initieren.
+Das Einpflegen neuer Requirements sollte komfortablerweise f"ur Domainfremde Stakeholder "uber ein Webformular realisiert werden und den oben genannten Einpfleg-Prozess in das Git-Repository initieren.
 \smallbreak
 
 Als Format f"ur ein Requirement habe ich ein Markdown-Template, was die "ublichen Attribute eines Requirements beinhaltet, gew"ahlt.
