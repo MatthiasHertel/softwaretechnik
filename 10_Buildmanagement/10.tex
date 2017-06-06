@@ -1,0 +1,187 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Softwaretechnik SS 2017
+%
+% Date: April 2017
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage{framed}
+\usepackage[myheadings]{fullpage}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+
+
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage[ngerman]{babel}
+\usepackage[ngerman]{translator}
+\usepackage{sectsty}
+\usepackage{url, lipsum}
+\usepackage[parfill]{parskip}
+\usepackage{csquotes}
+\usepackage[hidelinks]{hyperref}
+\usepackage[acronym]{glossaries}
+
+\usepackage[sorting=none,backref=true, backend=biber]{biblatex}
+\addbibresource{\jobname.bib}
+\usepackage[export]{adjustbox}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{pdfpages}
+% \usepackage{xcolor}
+
+
+\makeglossaries
+\glstoctrue
+
+\usepackage{listings}
+\usepackage{color}
+
+\usepackage{dirtree}
+\input dirtree
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{dandelion}{HTML}{FDBC42}
+
+\lstset{
+  % frame=tblr,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  % numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  % morecomment=[s][\color{orange}]{@}{\ },
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  moredelim=[is][\textcolor{orange}]{\~\~}{\~\~},
+  moredelim=[il][\textcolor{dandelion}]{\$\$},
+  moredelim=[is][\textcolor{dandelion}]{\%\%}{\%\%}
+}
+
+\DTsetlength{ 0.2em}{ 1em}{ 0.2em}{ 0.4pt}{ 0.1pt}
+
+\usepackage[T1]{fontenc}
+%-------------------------------------------------------------------------------
+% Commands
+%-------------------------------------------------------------------------------
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\input{../env}
+%-------------------------------------------------------------------------------
+% HEADER & FOOTER
+%-------------------------------------------------------------------------------
+\fancypagestyle{myplain}
+{
+\fancyhf{}
+\paperwidth=\pdfpageheight
+\paperheight=\pdfpagewidth
+\pdfpageheight=\paperheight
+\pdfpagewidth=\paperwidth
+\headwidth=\textwidth
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\fancyfoot[R]{Seite \thepage\ von \pageref{LastPage}}
+
+}
+
+\fancypagestyle{myfancy}{
+  \fancyhf{}
+  \pagestyle{fancy}
+  \fancyhf{}
+  \setlength\headheight{15pt}
+  \fancyhead[L]{\newCommandName}
+  \fancyhead[R]{\newCommandUniversity}
+  \fancyfoot[R]{Seite \thepage\ von \pageref{LastPage}}
+}
+
+%-------------------------------------------------------------------------------
+% TITLE PAGE
+%-------------------------------------------------------------------------------
+\begin{document}
+\hypersetup{
+    % colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+
+\title{ \normalsize
+		\HRule{0.5pt} \\
+		\LARGE \textbf{\uppercase{\newCommandDiscipline}} \\
+    \smallbreak
+    \small\textbf{{ANT - Buildmanagement}}\\
+		\HRule{2pt} \\ [0.5cm]
+    \small\textbf{{\newCommandTerm}}\\
+    [0.5cm]
+    \normalsize \today \vspace*{10\baselineskip}}
+
+\date{}
+
+
+
+\author{
+    \newCommandName \\
+		\newCommandMatriculationNumber \\
+		\newCommandUniversity \\
+		\newCommandFaculty
+}
+
+% \pagenumbering{gobble}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\pagestyle{myfancy}
+\tableofcontents
+% \listoffigures
+\newpage
+
+%-------------------------------------------------------------------------------
+% Section title formatting
+\sectionfont{\scshape}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% BODY
+%-------------------------------------------------------------------------------
+\section{ANT - Buildmanagement}
+
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------
+% Literatur - Glossar - Akronyme
+%-------------------------------------------------------------------------------
+
+% \clearpage
+% \setlength\bibitemsep{10pt}
+% \printbibliography[heading=bibintoc]
+% \newpage
+% \printglossary[type=main,title=Glossar]
+% \printglossary[type=\acronymtype, title=Akronyme]
+
+
+%-------------------------------------------------------------------------------
+% ENDE
+%-------------------------------------------------------------------------------
+
+\end{document}
