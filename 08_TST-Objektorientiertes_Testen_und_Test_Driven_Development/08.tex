@@ -1,0 +1,632 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Softwaretechnik SS 2017
+%
+% Date: April 2017
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage{framed}
+\usepackage[myheadings]{fullpage}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+
+
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage[ngerman]{babel}
+\usepackage[ngerman]{translator}
+\usepackage{sectsty}
+\usepackage{url, lipsum}
+\usepackage[parfill]{parskip}
+\usepackage{csquotes}
+\usepackage[hidelinks]{hyperref}
+\usepackage[acronym]{glossaries}
+
+\usepackage[sorting=none,backref=true, backend=biber]{biblatex}
+\addbibresource{\jobname.bib}
+\usepackage[export]{adjustbox}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{pdfpages}
+% \usepackage{xcolor}
+
+
+\makeglossaries
+\glstoctrue
+
+\usepackage{listings}
+\usepackage{color}
+
+\usepackage{dirtree}
+\input dirtree
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{dandelion}{HTML}{FDBC42}
+
+\lstset{
+  % frame=tblr,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  % morecomment=[s][\color{orange}]{@}{\ },
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  moredelim=[is][\textcolor{orange}]{\~\~}{\~\~},
+  moredelim=[il][\textcolor{dandelion}]{\$\$},
+  moredelim=[is][\textcolor{dandelion}]{\%\%}{\%\%}
+}
+
+\DTsetlength{ 0.2em}{ 1em}{ 0.2em}{ 0.4pt}{ 0.1pt}
+
+\usepackage[T1]{fontenc}
+%-------------------------------------------------------------------------------
+% Commands
+%-------------------------------------------------------------------------------
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\input{../env}
+%-------------------------------------------------------------------------------
+% HEADER & FOOTER
+%-------------------------------------------------------------------------------
+\fancypagestyle{myplain}
+{
+\fancyhf{}
+\paperwidth=\pdfpageheight
+\paperheight=\pdfpagewidth
+\pdfpageheight=\paperheight
+\pdfpagewidth=\paperwidth
+\headwidth=\textwidth
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\fancyfoot[R]{Seite \thepage\ von \pageref{LastPage}}
+
+}
+
+\fancypagestyle{myfancy}{
+  \fancyhf{}
+  \pagestyle{fancy}
+  \fancyhf{}
+  \setlength\headheight{15pt}
+  \fancyhead[L]{\newCommandName}
+  \fancyhead[R]{\newCommandUniversity}
+  \fancyfoot[R]{Seite \thepage\ von \pageref{LastPage}}
+}
+
+%-------------------------------------------------------------------------------
+% TITLE PAGE
+%-------------------------------------------------------------------------------
+\begin{document}
+\hypersetup{
+    % colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+
+\title{ \normalsize
+		\HRule{0.5pt} \\
+		\LARGE \textbf{\uppercase{\newCommandDiscipline}} \\
+    \smallbreak
+    \small\textbf{{TST - Objektorientiertes Testen und Test Driven Development}}\\
+		\HRule{2pt} \\ [0.5cm]
+    \small\textbf{{\newCommandTerm}}\\
+    [0.5cm]
+    \normalsize \today \vspace*{10\baselineskip}}
+
+\date{}
+
+
+
+\author{
+    \newCommandName \\
+		\newCommandMatriculationNumber \\
+		\newCommandUniversity \\
+		\newCommandFaculty
+}
+
+% \pagenumbering{gobble}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\pagestyle{myfancy}
+\tableofcontents
+% \listoffigures
+\newpage
+
+%-------------------------------------------------------------------------------
+% Section title formatting
+\sectionfont{\scshape}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% BODY
+%-------------------------------------------------------------------------------
+\section{TST - Objektorientiertes Testen und Test Driven Development}
+\subsection{Vorwort}
+\subsubsection{Erkl"arung zur Aufgabenumsetzung}
+Getest wird die Klasse \textbf{ProductController.java}.
+Sie repr"asentiert einen Crud-Controller. Es werden die Crud-Operationen getestet. Es wird auf eine Exception getestet. (Wenn die Resource unter der Id - ProductNotFoundException - nicht gefunden wurde.)
+
+
+\subsubsection{Git Repository}
+\textbf{SSH:}
+% \begin{lstlisting}[]
+
+git clone git@github.com:MatthiasHertel/productstore.git
+% \end{lstlisting}
+
+\textbf{Download:}
+
+https://github.com/MatthiasHertel/productstore/archive/master.zip
+
+\newpage
+\subsection{Project - Tree}
+\renewcommand*\DTstylecomment{\rmfamily\color{red}\textsc}
+\dirtree{%
+.1 / .
+.2 src .
+  .3 main .
+    .4 java .
+      .5 de .
+        .6 mhertel .
+          .7 ProductstoreApplication.java.
+          .7 config .
+            .8 SecurityConfig.java.
+          .7 controller .
+            .8 HomeController.java.
+            .8 ProductController.java\DTcomment{Class}.
+          .7 domain .
+            .8 Product.java.
+            .8 User.java.
+            .8 Security .
+              .9 Authority.java.
+              .9 PasswordResetToken.java.
+              .9 Role.java.
+              .9 UserRole.java.
+          .7 repository .
+            .8 ProductRepository.java.
+            .8 RoleRepository.java.
+            .8 UserRepository.java.
+          .7 service .
+            .8 ProductService.java.
+            .8 UserService.java.
+            .8 impl .
+              .9 ProductServiceImpl.java.
+              .9 UserSecurityService.java.
+              .9 UserServiceImpl.java.
+          .7 utility .
+            .8 ProductNotFoundException.java\DTcomment{Exception}.
+            .8 SecurityUtility.java.
+    .4 resources .
+  .3 test.
+    .4 java .
+      .5 de .
+        .6 mhertel .
+          .7 controller .
+            .8 ProductControllerTest.java\DTcomment{Testclass}.
+          .7 ProductstoreApplicationTests.java.
+}
+%-------------------------------------------------------------------------------
+% #1
+%-------------------------------------------------------------------------------
+\newpage
+\subsection{ProductController.java}
+
+\begin{lstlisting}
+package de.mhertel.controller;
+
+import de.mhertel.domain.Product;
+import de.mhertel.service.ProductService;
+import de.mhertel.utility.ProductNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import java.util.List;
+
+
+/**
+ * Created by matthias on 13.05.17.
+ */
+
+$$@Controller
+%%@RequestMapping%%("/products")
+public class ProductController {
+
+
+    $$@Autowired
+    private ProductService productService;
+
+
+    /**
+     * This method will list all existing products.
+     *
+     * @param model
+     * @return route to View with all Products TODO pagination
+     */
+    %%@RequestMapping%%(value = "/list" , method = RequestMethod.GET)
+    public String ~~listProducts~~(ModelMap model) {
+
+        List<Product> productList = productService.findAll();
+        model.addAttribute("productList", productList);
+
+        return ("product/list");
+    }
+
+
+
+
+
+    /**
+     * This method will provide the medium to add a new product.
+     *
+     * @param model
+     * @return route to View with Form for Product TODO DRY - use one form for create/update
+     */
+    %%@RequestMapping%%(value = "/add", method = RequestMethod.GET)
+    public String ~~addProduct~~(ModelMap model) {
+
+        Product product = new Product();
+        model.addAttribute("product", product);
+        model.addAttribute("edit", false);
+        return "product/add";
+    }
+
+
+
+    /**
+     * This method will be called on form submission, handling POST request for saving product in database.
+     * TODO validate the user input
+     * @param product
+     * @param result
+     * @param model
+     * @return redirect to View with all Products
+     */
+    %%@RequestMapping%%(value = "/add", method = RequestMethod.POST)
+    public String ~~addProductPost~~(%%@ModelAttribute%%("product") Product product, BindingResult result, ModelMap model) {
+        if (result.hasErrors()) {
+            return "product/list";
+        }
+        productService.save(product);
+        model.addAttribute("success", "Product " + product.getTitle() + " created successfully");
+        return "redirect:/products/list";
+    }
+
+
+
+
+
+
+
+
+    /**
+     * @param id
+     * @param model
+     * @return route to View with the product (Single)
+     * @throws Exception
+     */
+    %%@RequestMapping%%("/detail")
+    public String ~~productDetail~~(%%@RequestParam%%("id") Long id, ModelMap model) throws Exception{
+
+        Product product = productService.findOne(new Long(id));
+        if (product == null) throw new ProductNotFoundException();
+        model.addAttribute("product", product);
+
+        return "product/detail";
+    }
+
+
+
+
+    /**
+     * This method will provide the medium to update an existing product.
+     *
+     * @param id
+     * @param model
+     * @return route to View with Form for Product TODO DRY - use one form for create/update
+     */
+    %%@RequestMapping%%("/update")
+    public String ~~updateProduct~~(%%@RequestParam%%("id") Long id, ModelMap model) {
+
+        Product product = productService.findOne(id);
+        model.addAttribute("product", product);
+        model.addAttribute("edit", true);
+        return "product/update";
+    }
+
+
+
+
+
+
+
+
+
+
+    /**
+     * This method will be called on form submission, handling POST request for updating product in database.
+     *
+     * @param product
+     * @param model
+     * @return redirect to View the Product (Single)
+     */
+    %%@RequestMapping%%(value="/update", method=RequestMethod.POST)
+    public String ~~updateProductPost~~(%%@ModelAttribute%%("product") Product product, ModelMap model) {
+
+        productService.updateProduct(product);
+        model.addAttribute("success", "Product " + product.getTitle()	+ " updated successfully");
+
+        return "redirect:/products/detail?id="+ product.getId();
+    }
+
+
+    /**
+     * This method will delete a Product by it's Id value.
+     *
+     * @param id
+     * @param model
+     * @return redirect to View with all Products
+     */
+    %%@RequestMapping%%(value="/remove", method=RequestMethod.POST)
+    public String ~~removeProduct~~(%%@ModelAttribute%%("id") String id, ModelMap model) {
+
+        productService.removeOne(Long.parseLong(id));
+        List<Product> productList = productService.findAll();
+        model.addAttribute("productList", productList);
+
+        return "redirect:/products/list";
+    }
+}
+\end{lstlisting}
+\newpage
+
+\subsection{ProductControllerTest.java}
+
+\begin{lstlisting}
+package de.mhertel.controller;
+
+import de.mhertel.domain.Product;
+import de.mhertel.service.ProductService;
+import de.mhertel.utility.ProductNotFoundException;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.mockito.Spy;
+import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import java.util.ArrayList;
+import java.util.List;
+import static org.mockito.Matchers.anyLong;
+import static org.mockito.Mockito.*;
+
+/**
+ * Created by matthias on 13.05.17.
+ */
+public class ProductControllerTest {
+
+    $$@Mock
+    ProductService productService;
+    $$@Mock
+    BindingResult result;
+    $$@Mock
+    MockHttpServletRequest request = new MockHttpServletRequest();
+    $$@InjectMocks
+    ProductController productController;
+    $$@Spy
+    List<Product> products = new ArrayList<>();
+    $$@Spy
+    ModelMap model;
+
+    $$@Before
+    public void ~~setUp()~~ throws Exception {
+        MockitoAnnotations.initMocks(this);
+        products = getProductList();
+    }
+
+    /**
+     * Seeding some hardcode-Data for testsuite.
+     *
+     * @return List<Product>
+     */
+    public List<Product> ~~getProductList()~~{
+        Product p1 = new Product();
+        p1.setId(new Long(1));
+        p1.setTitle("Title1");
+        p1.setCategory("Category1");
+        p1.setDescription("description");
+        p1.setShippingWeight(20);
+        p1.setListPrice(20.0);
+        p1.setActive(true);
+        p1.setInStockNumber(20);
+
+        Product p2 = new Product();
+        p2.setId(new Long(2));
+        p2.setTitle("Title2");
+        p2.setCategory("Category2");
+        p2.setDescription("description");
+        p2.setShippingWeight(20);
+        p2.setListPrice(20.0);
+        p2.setActive(true);
+        p2.setInStockNumber(20);
+
+        Product p33 = new Product();
+        p33.setId(new Long(33));
+        p33.setTitle("Title33");
+        p33.setCategory("Category33");
+        p33.setDescription("description");
+        p33.setShippingWeight(330);
+        p33.setListPrice(330.0);
+        p33.setActive(true);
+        p33.setInStockNumber(330);
+
+        products.add(p1);
+        products.add(p2);
+        products.add(p33);
+        return products;
+    }
+
+
+
+
+
+    /**
+     * Test method - list all existing products.
+     * @throws Exception
+     */
+    $$@Test
+    public void ~~listProducts()~~ throws Exception {
+        when(productService.findAll()).thenReturn(products);
+        Assert.assertEquals(productController.listProducts(model), "product/list");
+        Assert.assertEquals(model.get("productList").toString(), products.toString());
+        verify(productService, atLeastOnce()).findAll();
+    }
+
+    /**
+     * Test method - get addProduct-View-Form.
+     * @throws Exception
+     */
+    $$@Test
+    public void ~~addProduct()~~ throws Exception {
+        Assert.assertEquals(productController.addProduct(model), "product/add");
+        Assert.assertNotNull(model.get("product"));
+        Assert.assertFalse((Boolean)model.get("edit"));
+        Assert.assertEquals(((Product)model.get("product")).getId(), null);
+    }
+
+    /**
+     * Test method - post addProduct-View-Form.
+     * @throws Exception
+     */
+    $$@Test
+    public void ~~addProductPost()~~ throws Exception {
+        when(result.hasErrors()).thenReturn(false);
+        doNothing().when(productService).saveProduct(any(Product.class));
+        Assert.assertEquals(productController.addProductPost(products.get(0), result, model), "redirect:/products/list");
+        Assert.assertEquals(model.get("success"), "Product Title1 created successfully");
+    }
+
+
+
+
+
+
+
+    /**
+     * Test method - get expected Exception (product not found)
+     * @throws Exception
+     */
+    %%@Test%%(expected = ProductNotFoundException.class)
+    public void ~~productDetail()~~ throws Exception {
+        productController.productDetail(new Long(34), model);
+    }
+
+    /**
+     * Test method - get editProduct-View-Form.
+     * @throws Exception
+     */
+    $$@Test
+    public void ~~updateProduct()~~ throws Exception {
+        Product product = products.get(0);
+        when(productService.findOne(anyLong())).thenReturn(product);
+        Assert.assertEquals(productController.updateProduct(anyLong(), model), "product/update");
+        Assert.assertNotNull(model.get("product"));
+        Assert.assertTrue((Boolean)model.get("edit"));
+        Assert.assertEquals(((Product)model.get("product")).getId(), new Long(1));
+    }
+
+    /**
+     * Test method - post editProduct-View-Form.
+     * @throws Exception
+     */
+    $$@Test
+    public void ~~updateProductPost()~~ throws Exception {
+        when(result.hasErrors()).thenReturn(false);
+        doNothing().when(productService).updateProduct(any(Product.class));
+        Assert.assertEquals(productController.updateProductPost(products.get(0), model), "redirect:/products/detail?id=1");
+        Assert.assertEquals(model.get("success"), "Product Title1 updated successfully");
+    }
+
+
+
+
+
+
+
+
+    /**
+     * Test method - removeProduct
+     * @throws Exception
+     */
+    $$@Test
+    public void ~~removeProduct~~() throws Exception {
+        doNothing().when(productService).removeOne(anyLong());
+        Assert.assertEquals(productController.removeProduct("1", model), "redirect:/products/list");
+    }
+}
+\end{lstlisting}
+
+\newpage
+
+\subsection{ProductNotFoundException.java}
+
+\begin{lstlisting}
+package de.mhertel.utility;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+/**
+ * Created by matthias on 13.05.17.
+ */
+%%@ResponseStatus%%(value=HttpStatus.NOT_FOUND, reason="No such Product")  //404
+public class ProductNotFoundException extends RuntimeException {
+    // ...
+}
+\end{lstlisting}
+
+
+
+
+%-------------------------------------------------------------------------------
+% Literatur - Glossar - Akronyme
+%-------------------------------------------------------------------------------
+
+% \clearpage
+% \setlength\bibitemsep{10pt}
+% \printbibliography[heading=bibintoc]
+% \newpage
+% \printglossary[type=main,title=Glossar]
+% \printglossary[type=\acronymtype, title=Akronyme]
+
+
+%-------------------------------------------------------------------------------
+% ENDE
+%-------------------------------------------------------------------------------
+
+\end{document}
