@@ -1,0 +1,153 @@
+@startuml
+
+/'
+%-------------------------------------------------------------------------------
+% High Level
+%-------------------------------------------------------------------------------
+'/
+
+/'frontmatter/preambel'/
+title "Shop - High level \n keep it short and simple (kiss)"
+left to right direction
+
+/'actors'/
+/'humans'/
+actor "Customer" <<human>> as customer
+actor "Admin" <<human>> as admin
+/'systems'/
+actor "Inventory Control System" <<system>> as ics
+actor "Communication System" <<system>> as cs
+actor "Account Mangagement System" <<system>> as ams
+actor "Payment Service Provider" <<system>> as psp
+
+/'system rectangle - highlevel'/
+rectangle "Shop \nCustomer-Context" {
+  /'usecases for intial actors'/
+  customer --> (login)
+  customer --> (logout)
+  customer --> (register)
+  customer --> (search product)
+  customer --> (buy product)
+
+  /'usecases secondary actors'/
+  (login) -- ams
+  (logout) -- ams
+  (register) -- ams
+  (register) -- cs
+  (buy product) -- cs
+  (buy product) -- ics
+  (buy product) -- psp
+  (search product) -- ics
+}
+
+rectangle "Shop \nAdmin-Context" {
+  /'usecases for intial actors'/
+  (product management) <-- admin
+  (user management) <-- admin
+
+  /'usecases secondary actors'/
+  ams -- (user management)
+  ics -- (product management)
+
+}
+
+/'
+%-------------------------------------------------------------------------------
+% Sub Level Auth
+%-------------------------------------------------------------------------------
+'/
+
+/'frontmatter/preambel'/
+newpage
+title "Shop - Sub level (Auth)"
+left to right direction
+
+/'actors'/
+/'humans'/
+actor "Customer" <<human>> as customer
+
+/'systems'/
+actor "Account Mangagement System" <<system>> as ams
+actor "Communication System" <<system>> as cs
+actor "Payment Service Provider" <<system>> as psp
+
+/'system rectangle - sublevel Auth'/
+rectangle "Shop \n Customer-Context" {
+  /'usecases for intial actors'/
+  customer --> (login)
+  customer --> (logout)
+  customer --> (register)
+   /'extended usecases'/
+  (login) -- (view profile) :extends
+  (view profile) -- (manage profile) :extends
+  (manage profile) -- (delete profile) :extends
+  (manage profile) -- (update profile) :extends
+  (manage profile) -- (unsubscribe newsletter) :extends
+  (manage profile) -- (add new payment-method) :extend
+  (register) -- (subscribe newsletter) :extends
+  /'included usecases'/
+  (register) -- (double opt in) :include
+
+  /'usecases for secondary actors'/
+  (double opt in) -- cs
+  (subscribe newsletter) -- cs
+  (unsubscribe newsletter) -- cs
+  (double opt in) -- ams
+  (manage profile) -- ams
+   /'TODO: reicht es aus wenn wenn der usecase manage profile mit dem ams verbunden ist ?'/
+  (delete profile) -- ams
+  (update profile) -- ams
+
+  (add new payment-method) -- psp :verify
+}
+
+
+/'
+%-------------------------------------------------------------------------------
+% Sub Level Business Transaction
+%-------------------------------------------------------------------------------
+'/
+
+/'frontmatter/preambel'/
+newpage
+title "Shop - Sub level (Business Transaction)"
+left to right direction
+
+/'actors'/
+/'humans'/
+actor "Customer" <<human>> as customer
+/'systems'/
+actor "Inventory Control System" <<system>> as ics
+actor "Payment Service Provider" <<system>> as psp
+actor "Communication System" <<system>> as cs
+
+
+/'system rectangle - sublevel Business Transaction '/
+rectangle "Shop \n Customer-Context"{
+  /'usecases for intial actors'/
+  customer --> (search product)
+  (search product) -- (view product) :extend
+  (view product) -- (put to basket) :extend
+  (view product) -- (view feedbacks) :extend
+  (view product) -- (put to wishlist) :extend
+  customer --> (buy product)
+  (buy product) -- (put to basket) :include
+  (buy product) -- (checkout) :include
+  (checkout) -- (select payment-method) :include
+
+  (checkout) -- (write feedback) :extend
+  (view feedbacks) -- (write feedback) : "assumes checkout"
+  (checkout) -- (send confirmation) :include
+  (checkout) -- (add new payment-method) :extend
+
+
+  (send confirmation) -- cs
+  (checkout) -- psp :verify
+  (buy product) -- ics
+  /'extended usecases'/
+  /'included usecases'/
+  /'usecases for secondary actors'/
+}
+
+
+@enduml

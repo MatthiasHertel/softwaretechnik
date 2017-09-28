@@ -1,0 +1,28 @@
+@startuml
+title Buy a Product
+
+(*) --> "Select Product"
+
+ /'pre condition - acces is granted'/
+if "User state" then
+  ->[User is logged in] "start buying proccess"
+  --> "terminate buying process"
+  --> (*)
+
+else
+  -left->[Anonymous User] "Login/Register Loop"
+  if "login" then
+  -up-> [granted] "start buying proccess"
+  else
+   /'TODO Anonymous buying is a use case ?'/
+  -down-> [denied] "register proccess"
+    if "register\n success?" then
+    -up-> [true] "Login/Register Loop"
+    else
+    -right-> [false] "register help"
+    -up-> [register again] "register proccess"
+    endif
+  endif
+endif
+
+@enduml

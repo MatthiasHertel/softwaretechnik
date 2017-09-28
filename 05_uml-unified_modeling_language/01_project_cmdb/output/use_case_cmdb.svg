@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="782px" preserveAspectRatio="none" style="width:1467px;height:782px;" version="1.1" viewBox="0 0 1467 782"
+    width="1467px" zoomAndPan="magnify"><defs><filter height="300%" id="ft9g31uc35xfs" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="666" x="406" y="17.4023">CMDB - configurated management database - Internes Management System</text><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="212" x="639" y="38.6016">Ressourcenmanagement</text><!--cluster CMDB--><rect fill="#FFFFFF" filter="url(#ft9g31uc35xfs)" height="629" style="stroke: #000000; stroke-width: 2.0;" width="232" x="688" y="58.8984"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="47" x="780.5" y="74.4336">«Main»</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="43" x="782.5" y="90.9219">CMDB</text><!--cluster Monitor--><rect fill="#FFFFFF" filter="url(#ft9g31uc35xfs)" height="160" style="stroke: #000000; stroke-width: 2.0;" width="356" x="965" y="250.8984"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="167" x="1057" y="266.4336">Fremdsystem - Polling</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="146" x="1070" y="282.9219">Monitoring/Alerting</text><ellipse cx="804.2394" cy="121.0463" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="81.2394" ry="18.6479" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="133" x="737.7394" y="125.7904">manage db schema</text><ellipse cx="803.9352" cy="367.8855" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="107.9352" ry="23.987" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="193" x="707.4352" y="372.6296">manage configuration items</text><ellipse cx="804.1838" cy="442.0574" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="41.1838" ry="14.659" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="54" x="777.1838" y="446.8016">Security</text><ellipse cx="803.8196" cy="514.0624" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="98.8196" ry="22.1639" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="173" x="717.3196" y="518.8065">Manage User Roles - ACL</text><ellipse cx="803.9411" cy="294.0574" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="36.9411" ry="14.659" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="48" x="779.9411" y="298.8016">polling</text><ellipse cx="803.9619" cy="586.0574" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="48.9619" ry="14.659" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="771.4619" y="590.8016">reporting</text><ellipse cx="804.0181" cy="657.7021" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="97.0181" ry="21.8036" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="169" x="719.5181" y="662.4462">Ressourcenmanagement</text><ellipse cx="1143.162" cy="365.8308" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="170.162" ry="36.4324" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="324" x="981.162" y="370.575">generiert metainfos zu den configuration items</text><!--entity clusteradmin_employee--><ellipse cx="87.5" cy="475.3984" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M87.5,483.3984 L87.5,510.3984 M74.5,491.3984 L100.5,491.3984 M87.5,510.3984 L74.5,525.3984 M87.5,510.3984 L100.5,525.3984 " fill="#FEFECE" filter="url(#ft9g31uc35xfs)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="162" x="6.5" y="545.9336">clusteradmin_employee</text><!--entity developer_employee--><ellipse cx="87.5" cy="593.3984" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M87.5,601.3984 L87.5,628.3984 M74.5,609.3984 L100.5,609.3984 M87.5,628.3984 L74.5,643.3984 M87.5,628.3984 L100.5,643.3984 " fill="#FEFECE" filter="url(#ft9g31uc35xfs)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="141" x="17" y="663.9336">developer_employee</text><!--entity managenemt_employee--><ellipse cx="87.5" cy="711.3984" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M87.5,719.3984 L87.5,746.3984 M74.5,727.3984 L100.5,727.3984 M87.5,746.3984 L74.5,761.3984 M87.5,746.3984 L100.5,761.3984 " fill="#FEFECE" filter="url(#ft9g31uc35xfs)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="163" x="6" y="781.9336">managenemt_employee</text><!--entity employee--><ellipse cx="314.5" cy="593.3984" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M314.5,601.3984 L314.5,628.3984 M301.5,609.3984 L327.5,609.3984 M314.5,628.3984 L301.5,643.3984 M314.5,628.3984 L327.5,643.3984 " fill="#FEFECE" filter="url(#ft9g31uc35xfs)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="66" x="281.5" y="663.9336">employee</text><!--entity user--><ellipse cx="547.5" cy="601.3867" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M547.5,609.3867 L547.5,636.3867 M534.5,617.3867 L560.5,617.3867 M547.5,636.3867 L534.5,651.3867 M547.5,636.3867 L560.5,651.3867 " fill="#FEFECE" filter="url(#ft9g31uc35xfs)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="103" x="496" y="671.9219">abstracter user</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="63" x="516" y="588.4336">«Human»</text><!--entity admin--><ellipse cx="547.5" cy="390.3867" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M547.5,398.3867 L547.5,425.3867 M534.5,406.3867 L560.5,406.3867 M547.5,425.3867 L534.5,440.3867 M547.5,425.3867 L560.5,440.3867 " fill="#FEFECE" filter="url(#ft9g31uc35xfs)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="43" x="526" y="460.9219">admin</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="63" x="516" y="377.4336">«Human»</text><!--entity ganglia--><ellipse cx="1420" cy="275.3867" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M1420,283.3867 L1420,310.3867 M1407,291.3867 L1433,291.3867 M1420,310.3867 L1407,325.3867 M1420,310.3867 L1433,325.3867 " fill="#FEFECE" filter="url(#ft9g31uc35xfs)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="51" x="1394.5" y="345.9219">ganglia</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="92" x="1374" y="262.4336">«Application»</text><!--entity nagios--><ellipse cx="1420" cy="410.3867" fill="#FEFECE" filter="url(#ft9g31uc35xfs)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M1420,418.3867 L1420,445.3867 M1407,426.3867 L1433,426.3867 M1420,445.3867 L1407,460.3867 M1420,445.3867 L1433,460.3867 " fill="#FEFECE" filter="url(#ft9g31uc35xfs)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="1397" y="480.9219">nagios</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="92" x="1374" y="397.4336">«Application»</text><polygon fill="#FBFB77" filter="url(#ft9g31uc35xfs)" points="230,401.3984,230,426.709,399,426.709,399,411.3984,389,401.3984,230,401.3984" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FBFB77" points="230,401.3984,230,426.709,399,426.709,399,419.3984,515.9024,413.8984,399,411.3984,399,411.3984,389,401.3984,230,401.3984" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="389" x2="389" y1="401.3984" y2="411.3984"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="399" x2="389" y1="411.3984" y2="411.3984"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="148" x="236" y="418.9668">eg. Applikations Admin</text><polygon fill="#FBFB77" filter="url(#ft9g31uc35xfs)" points="460,744.3984,460,769.709,635,769.709,635,754.3984,625,744.3984,460,744.3984" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FBFB77" points="460,744.3984,460,769.709,635,769.709,635,754.3984,625,744.3984,551.5,744.3984,547.5,675.2564,543.5,744.3984,460,744.3984" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="625" x2="625" y1="744.3984" y2="754.3984"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="635" x2="625" y1="754.3984" y2="754.3984"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="154" x="466" y="761.9668">eg. Mitarbeiter der Firma</text><path d="M347.8832,624.8984 C381.0815,624.8984 433.0692,624.8984 475.6675,624.8984 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="475.7016,617.8983,495.7016,624.8984,475.7016,631.8983,475.7016,617.8983" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M167.5317,548.5008 C199.4202,565.0772 235.1796,583.6658 263.4406,598.3565 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="266.7226,592.1733,281.2396,607.6089,260.2654,604.5952,266.7226,592.1733" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M158.0799,624.8984 C191.335,624.8984 230.3551,624.8984 261.1038,624.8984 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="261.3632,617.8983,281.3632,624.8984,261.3632,631.8983,261.3632,617.8983" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M167.5317,701.296 C199.4202,684.7196 235.1796,666.131 263.4406,651.4403 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="260.2654,645.2016,281.2396,642.1879,266.7226,657.6235,260.2654,645.2016" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M579.2092,377.677 C634.4323,314.5956 746.3377,186.766 787.9442,139.239 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M579.2092,408.2118 C614.1257,401.9499 671.7027,391.6242 719.8427,382.9909 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M579.2092,417.3598 C626.122,422.4809 713.9411,432.0674 764.8175,437.6212 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M579.0411,428.1343 C607.3437,440.7244 650.1336,459.3058 688,473.8984 C707.5795,481.4437 729.2651,489.1045 748.5375,495.6748 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M841.2487,293.8984 C862.5765,293.8984 891.2727,293.8984 922.5174,293.8984 C930.3286,293.8984 938.2991,293.8984 946.3535,293.8984 C950.3807,293.8984 954.4289,293.8984 958.4887,293.8984 C960.5185,293.8984 962.5513,293.8984 964.5858,293.8984 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M804,279.1485 C804,249.1643 804,180.872 804,144.5847 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="804,139.4714,800,148.4714,804,144.4714,808,148.4714,804,139.4714" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="43" x="771" y="214.4668">affects</text><path d="M599.0981,617.0531 C646.3508,609.8685 715.5315,599.3498 760.1674,592.563 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M599.0981,631.5367 C633.5501,635.9692 679.6589,641.9013 719.4123,647.0158 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M1256.066,338.5503 C1297.3547,328.5635 1341.7663,317.8213 1373.936,310.0402 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M1255.2672,393.4586 C1296.8084,403.6564 1341.6176,414.6565 1373.9998,422.6059 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+'frontmatter'
+title CMDB - configurated management database - Internes Management System \n Ressourcenmanagement
+skinparam packageStyle rectangle
+left to right direction
+
+
+'actors'
+
+actor clusteradmin_employee
+actor developer_employee
+actor managenemt_employee
+actor employee
+actor "abstracter user" as user << Human >>
+employee - -|> user
+clusteradmin_employee - -|> employee
+developer_employee - -|> employee
+managenemt_employee - -|> employee
+
+actor admin << Human >>
+
+'actor monitor
+actor ganglia << Application >>
+actor nagios << Application >>
+
+
+
+
+
+note left of admin : eg. Applikations Admin
+note bottom of user : eg. Mitarbeiter der Firma
+
+'use cases'
+
+usecase "CMDB Application" as CMDB << Main >>
+'usecase "der user generiert repots aus der cmdb" as "Report"
+
+
+
+
+'AnotherActor -> UCUseTheApplication
+'AnotherActor -> UC3
+'User .up.> UC1
+'user - -> UC1
+'admin - -> UC2 : transaction
+
+
+
+
+
+
+rectangle CMDB {
+  'foreignsys - - (generate information)
+  ''(data polling) - - Monitor
+  admin - - (manage db schema)
+  'admin - - (manage db schema)
+  admin - - (manage configuration items)
+  admin - - (Security)
+  admin - - (Manage User Roles - ACL)
+  (polling) - - Monitor
+  (polling) -> (manage db schema) : affects
+  user - - (reporting)
+  user - - (Ressourcenmanagement)
+
+}
+
+rectangle "Fremdsystem - Polling \n Monitoring/Alerting " as Monitor {
+  (generiert metainfos zu den configuration items) - - ganglia
+  (generiert metainfos zu den configuration items) - - nagios
+}
+
+
+@enduml
+
+PlantUML version 2017.11(Wed Apr 19 18:18:59 CEST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_121-b13
+Operating System: Mac OS X
+OS Version: 10.11.6
+Default Encoding: UTF-8
+Language: de
+Country: DE
+--></g></svg>

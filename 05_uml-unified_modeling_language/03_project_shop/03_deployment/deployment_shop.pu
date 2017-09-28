@@ -1,0 +1,124 @@
+@startuml
+title Deployment Shop
+left to right direction
+node "Kunde Website" as pl {
+  component "<<OS>> \n : Betriebssystem" as pl_client {
+    component "<<user interface>>" as web0 {
+      [Website] as ui1
+    }
+  }
+}
+node "Kunde Mobile Device" as pl1 {
+  component "<<OS>> \n : Betriebssystem" as pl_client1 {
+    component "<<user interface>>" as web1 {
+      [Ios / Android] as ui2
+    }
+  }
+}
+
+
+node ": Balancer" as lb_front {
+  component "WebProxyNode1" as WPN1 {
+    component "<<OS>>" as WPN1_OS {
+      component "<<execution environment>> \n www.acme.de Apache/Nginx" as WPN1_execenv {
+        component "<<application>> \n :mod_proxy" as lb_front1 {
+
+        }
+      }
+    }
+  }
+}
+
+node "Application Layer" as al {
+  frame "Application Server 1" as as1 {
+    [Application Server 1a] as as_1a
+    [Application Server 1b] as as_1b
+  }
+  frame "Application Server 2" as as2 {
+    [Application Server 2a] as as_2a
+    [Application Server 2b] as as_2b
+  }
+  frame "Application Server  ..." as "as..." {
+    [Application Server ...] as as_...
+  }
+}
+
+node "Load Balancer" as lb_back {
+  [Proxy Balancer] as lb_back1
+}
+
+node "Persistence Layer" as dbl {
+  frame "Database Server 1" as db_1 {
+    database "Account Schema" as db_1a
+    database "Product Schema" as db_1b
+    database "Invoice/Order Schema" as db_1c
+
+  }
+  frame "Database Server 2" as db_2 {
+    database "Account Schema" as db_2a
+    database "Product Schema" as db_2b
+    database "Invoice/Order Schema" as db_2c
+
+  }
+  frame "Database Server ..." as db_x {
+    database "Database Server ..." as db_xx
+  }
+}
+
+/'assoziationen'/
+ui1 -- lb_front1 :internet
+ui2 -- lb_front1 :internet
+
+/'lb_front1 -- as_1a
+lb_front1 -- as_1b
+lb_front1 -- as_2a
+lb_front1 -- as_2b
+lb_front1 -- as_...'/
+
+as_1a -- lb_back1
+as_1b -- lb_back1
+as_2a -- lb_back1
+as_2b -- lb_back1
+as_... -- lb_back1
+
+/'lb_back1 -- db_1a
+lb_back1 -- db_1b
+lb_back1 -- db_1c
+lb_back1 -- db_2a
+lb_back1 -- db_2b
+lb_back1 -- db_2c
+lb_back1 -- db_x'/
+
+lb_back1 -- db_1
+lb_back1 -- db_2
+lb_back1 -- db_x
+
+db_1 -down- db_2 :replication
+db_2 -down- db_x :replication
+
+
+/'skinparam componentStyle uml2
+package "Some Group" {
+  interface HTTP as httpEndpoint
+  [First Component]
+  [Another Component]
+}
+node "Other Groups" {
+  FTP - [Second Component]
+}
+cloud {
+  [Example 1]
+}
+database "MySql" {
+  folder "This is my folder" {
+    [Folder 3]
+  }
+  frame "Foo" {
+    [Frame 4]
+  }
+}
+httpEndpoint - [First Component]
+[First Component] --> FTP
+[Another Component] --> [Example 1]
+[Example 1] --> [Folder 3]'/
+@enduml
