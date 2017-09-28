@@ -1,0 +1,249 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Softwaretechnik SS 2017
+%
+% Date: April 2017
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage{framed}
+\usepackage[myheadings]{fullpage}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+
+
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage[ngerman]{babel}
+\usepackage[ngerman]{translator}
+\usepackage{sectsty}
+\usepackage{url, lipsum}
+\usepackage[parfill]{parskip}
+\usepackage{csquotes}
+\usepackage[hidelinks]{hyperref}
+\usepackage[acronym]{glossaries}
+
+\usepackage[sorting=none,backref=true, backend=biber]{biblatex}
+\addbibresource{\jobname.bib}
+\usepackage[export]{adjustbox}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{pdfpages}
+% \usepackage{xcolor}
+
+
+\makeglossaries
+\glstoctrue
+
+\usepackage{listings}
+\usepackage{color}
+
+\usepackage{dirtree}
+\input dirtree
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{dandelion}{HTML}{FDBC42}
+
+\lstset{
+  % frame=tblr,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  % numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  % morecomment=[s][\color{orange}]{@}{\ },
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  moredelim=[is][\textcolor{orange}]{\~\~}{\~\~},
+  moredelim=[il][\textcolor{dandelion}]{\$\$},
+  moredelim=[is][\textcolor{dandelion}]{\%\%}{\%\%}
+}
+
+\DTsetlength{ 0.2em}{ 1em}{ 0.2em}{ 0.4pt}{ 0.1pt}
+
+\usepackage[T1]{fontenc}
+%-------------------------------------------------------------------------------
+% Commands
+%-------------------------------------------------------------------------------
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\input{../env}
+%-------------------------------------------------------------------------------
+% HEADER & FOOTER
+%-------------------------------------------------------------------------------
+\fancypagestyle{myplain}
+{
+\fancyhf{}
+\paperwidth=\pdfpageheight
+\paperheight=\pdfpagewidth
+\pdfpageheight=\paperheight
+\pdfpagewidth=\paperwidth
+\headwidth=\textwidth
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\fancyfoot[R]{Seite \thepage\ von \pageref{LastPage}}
+
+}
+
+\fancypagestyle{myfancy}{
+  \fancyhf{}
+  \pagestyle{fancy}
+  \fancyhf{}
+  \setlength\headheight{15pt}
+  \fancyhead[L]{\newCommandName}
+  \fancyhead[R]{\newCommandUniversity}
+  \fancyfoot[R]{Seite \thepage\ von \pageref{LastPage}}
+}
+
+%-------------------------------------------------------------------------------
+% TITLE PAGE
+%-------------------------------------------------------------------------------
+\begin{document}
+\hypersetup{
+    % colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+
+\title{ \normalsize
+		\HRule{0.5pt} \\
+		\LARGE \textbf{\uppercase{\newCommandDiscipline}} \\
+    \smallbreak
+    \small\textbf{{REQ - Requirements Engineering}}\\
+		\HRule{2pt} \\ [0.5cm]
+    \small\textbf{{\newCommandTerm}}\\
+    [0.5cm]
+    \normalsize \today \vspace*{10\baselineskip}}
+
+\date{}
+
+
+
+\author{
+    \newCommandName \\
+		\newCommandMatriculationNumber \\
+		\newCommandUniversity \\
+		\newCommandFaculty
+}
+
+% \pagenumbering{gobble}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\pagestyle{myfancy}
+\tableofcontents
+% \listoffigures
+\newpage
+
+%-------------------------------------------------------------------------------
+% Section title formatting
+\sectionfont{\scshape}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% BODY
+%-------------------------------------------------------------------------------
+\section{REQ - Requirements Engineering}
+
+\subsection{Vorwort}
+
+Ich habe die Erhebung der Anforderungen ("Requirements Gathering") mit Airtables und einem Versionskontrollsystem (GIT) f"ur die Historie eines Requirements umgesetzt.
+Genauere Informationen "uber die Strategie zur Erhebnung der Requirements finden Sie unter 1.3 ``Gathering Requirements Process''.
+
+Mein Ziel war es eine universelle skalierbare Strategie f"ur die Anforderungsermittlung in einem Softwareprojekt zu entwickeln.
+
+Nat"urlich steht der Aufwand den man betreibt immer in Relation zu der Gr"o"se des Projekts. Ich habe dabei den Fokus auf die Optimierung der Datenqualit"at eines einzelnen Requirements gelegt.
+Leider werden zu oft Requirements unzureichend definiert was zu etlichen R"uckfragen oder fehlerhaften Entwicklungsrichtungen des Projekts f"uhrt.
+Um dem vorzubeugen gibt es einen Master-Branch im Requirements Repository, die nur die Requirements beinhalten die der Qualit"atskontrolle standhalten.
+
+
+
+
+
+\subsection{Ressourcen}
+\textbf{Airtables:}
+
+\url{https://airtable.com/shrFcqCHFESQO1lfb}
+\bigbreak
+\textbf{Git-Repository:}
+
+\url{https://github.com/MatthiasHertel/productstore/tree/master/requirements}
+\smallbreak
+
+\textbf{checkout:}
+\begin{lstlisting}
+git clone git@github.com:MatthiasHertel/productstore.git
+\end{lstlisting}
+\newpage
+\subsection{Requirements Gathering Process}
+
+Alle Requirements werden in einem GIT-Repository versioniert.
+Die Requirements die es in den Master geschafft haben sind f"ur die Developer als bindend zu betrachten.
+Masterrechte hat der verantwortliche Requirement-Engineer bzw. der Projektmanager der die Schnittstelle zwischen Auftraggeber und Arbeitsteam bildet.
+Dazu habe ich das Requirement-Template um das Attribut ``Person Responsible'' erweitert um einen direkten Verantwortlichen zu benennen.
+\smallbreak
+Neue Requirements werden mittels eines Pull-Requests in das System eingepflegt. Das erh"oht die Datenqualit"at des einzelnen Requirements da sie in Revision gehen k"onnen bis sie die gew"unschte Datenqualit"at erreicht haben und in den Master gemerged werden k"onnen.
+\smallbreak
+Das Einpflegen neuer Requirements sollte komfortablerweise f"ur Domainfremde Stakeholder "uber ein Webformular realisiert werden und den oben genannten Einpfleg-Prozess in das Git-Repository initieren.
+\smallbreak
+
+Als Format f"ur ein Requirement habe ich ein Markdown-Template, was die "ublichen Attribute eines Requirements beinhaltet, gew"ahlt.
+Es hat dabei den Vorteil das auf Text in der Versionskontrolle gedifft werden kann und somit "Anderungen in dem Requirement leicht ersichtlich sind.
+
+Die Historiefunktionalit"at von Airtables war nicht ausreichend, es konnte zum beispiel nicht auf einzelne "Anderungen/Commits verlinkt werden wie bei Github.
+
+siehe zum Beispiel:
+
+\url{https://github.com/MatthiasHertel/productstore/commits/master/requirements/non-functional/look_and_feel/%238_Landingpagelayout.md}
+
+
+\smallbreak
+Als Outputformat kann aus dem Markdown zum Beispiel ein .pdf generiert werden was in diversen Meetings als Handout genutzt werden kann.
+
+Die Relationen der Requirements werden in Airtables abgebildet. Airtables bietet eine Gesamt"ubersicht sicht "uber alle vorhandenen Requirements.
+Aus den Records die sich in Airtables befinden werden Issues, Milestones - also direkte Arbeitsauftr"age f"ur das Entwicklungsteam in das Softwarerepository generiert.
+
+Als Schnittstelle zwischen Airtables und GIT w"urde ich folgenden Service implementieren:
+
+\url{https://airtable.com/integrations/github}
+
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------
+% Literatur - Glossar - Akronyme
+%-------------------------------------------------------------------------------
+
+% \clearpage
+% \setlength\bibitemsep{10pt}
+% \printbibliography[heading=bibintoc]
+% \newpage
+% \printglossary[type=main,title=Glossar]
+% \printglossary[type=\acronymtype, title=Akronyme]
+
+
+%-------------------------------------------------------------------------------
+% ENDE
+%-------------------------------------------------------------------------------
+
+\end{document}
